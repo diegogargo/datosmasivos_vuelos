@@ -6,4 +6,5 @@
 *.yaml text eol=lf
 # Conservar bytes de muestra y originales para verificaciones SHA256.
 data/sample/*.csv -text
+data/reference/*.csv -text
 notebooks/antecedentes/*.ipynb -text

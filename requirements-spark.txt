@@ -1,0 +1,3 @@
+# Pruebas locales/CI; NO instalar sobre PySpark administrado de Databricks.
+-r requirements.txt
+pyspark==4.2.0
