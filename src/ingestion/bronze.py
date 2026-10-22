@@ -127,8 +127,8 @@ def run_bronze(spark, volume_root, table, start='2025-01', end='2025-01', run_id
                 raise ValueError('La tabla existente no pertenece a esta ingesta Bronze')
             if spark.table(table).schema != frame.schema:
                 # Spark puede marcar nullable metadatos literales de forma distinta tras guardar.
-                expected = [(field.name, field.dataType.simpleString()) for field in frame.schema]
-                actual = [(field.name, field.dataType.simpleString()) for field in spark.table(table).schema]
+                expected = {field.name: field.dataType.simpleString() for field in frame.schema}
+                actual = {field.name: field.dataType.simpleString() for field in spark.table(table).schema}
                 if expected != actual:
                     raise ValueError('Esquema Delta incompatible; no sobrescribir automáticamente')
             (frame.write.format('delta').mode('overwrite')
