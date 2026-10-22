@@ -2,6 +2,7 @@
 import argparse,json
 from pathlib import Path
 import pandas as pd
+import numpy as np
 from src.processing.contracts import COLUMNS,KEY,hhmm_minutes,label_delay15
 from src.utils.common import ROOT,now,write_json,digest,read_json
 
@@ -14,9 +15,17 @@ def audit_frame(df):
     add('valid_dates',dates.isna().sum())
     add('required_keys',df[KEY].isna().any(axis=1).sum())
     add('unique_natural_key',df.duplicated(KEY).sum())
-    add('cancelled_binary',(~df.Cancelled.isin([0,1])).sum())
-    add('diverted_binary',(~df.Diverted.isin([0,1])).sum())
+    numeric={c:pd.to_numeric(df[c],errors='coerce') for c in set(COLUMNS)-{'FlightDate','Reporting_Airline','Tail_Number','Origin','Dest'}}
+    for column,values in sorted(numeric.items()):
+        add('finite_observed_'+column,(df[column].notna()&(~np.isfinite(values))).sum())
+    add('cancelled_binary',(~numeric['Cancelled'].isin([0,1])).sum())
+    add('diverted_binary',(~numeric['Diverted'].isin([0,1])).sum())
     add('scheduled_hhmm',df.CRSDepTime.map(hhmm_minutes).isna().sum())
+    add('arrival_scheduled_hhmm',df.CRSArrTime.map(hhmm_minutes).isna().sum())
+    for column in ('DepTime','ArrTime'):
+        add('observed_hhmm_'+column,(df[column].notna()&df[column].map(hhmm_minutes).isna()).sum())
+    flight=numeric['Flight_Number_Reporting_Airline']
+    add('flight_number_positive_integer',(~(np.isfinite(flight)&flight.gt(0)&flight.mod(1).eq(0))).sum())
     distance=pd.to_numeric(df.Distance,errors='coerce')
     add('distance_positive',((distance<=0)|distance.isna()).sum())
     add('origin_format',(~df.Origin.astype(str).str.fullmatch('[A-Z]{3}')).sum())
@@ -27,7 +36,9 @@ def audit_frame(df):
     return dict(validated_at=now(),passed=all(c['passed'] for c in checks),rows=len(df),
       columns=len(df.columns),checks=checks,cancellations=int(df.Cancelled.eq(1).sum()),
       eligible_departures=int(y.notna().sum()),delayed_departures=int(y.sum()),
-      delay_rate=float(y.mean()),missingness=df.isna().sum().astype(int).to_dict())
+      delay_rate=float(y.mean()) if y.notna().any() else None,
+      delay_rate_denominator='Cancelled == 0 y DepDelay finito observado',
+      missingness=df.isna().sum().astype(int).to_dict())
 def audit(path=None):
     path=Path(path) if path else ROOT/'data/sample/flights_2025_01.csv'
     df=pd.read_csv(path);result=audit_frame(df)

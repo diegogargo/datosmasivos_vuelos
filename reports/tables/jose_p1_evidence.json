@@ -1,0 +1,25 @@
+{
+  "executed_at": "2026-10-22T03:18:46.171645+00:00",
+  "issue": 2,
+  "branch": "jose_miguel/p1-02",
+  "prepared_for": "GUEVARA21",
+  "assistance": "Implementación, pruebas y documentación asistidas por Codex.",
+  "tests": {
+    "base": 27,
+    "new": 12,
+    "passed": 39,
+    "failed": 0,
+    "seconds": 2.95
+  },
+  "audit_passed": true,
+  "processed_validation_passed": true,
+  "rows": 5000,
+  "cancellations": 164,
+  "eligible_departures": 4836,
+  "delayed_departures": 896,
+  "original_notebook_sha256": "242eb31ac2994ba10a9ccb3f3a4d6390e661728c87e7774d4f0d7e1fbb8ff358",
+  "limitations": [
+    "La prueba local no acredita Silver ni ejecución Spark.",
+    "La publicación y la review se verifican en GitHub; este reporte no las da por realizadas."
+  ]
+}
