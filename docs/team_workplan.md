@@ -8,7 +8,7 @@ El notebook original permanece intacto. Los resultados históricos guardados se 
 ## Responsabilidad completa por integrante
 | Integrante | Módulo técnico principal | Entrega de calidad | Quién revisa su PR | A quién le toca revisar |
 |---|---|---|---|---|
-| Diego / `diegogargo` | Procedencia, adquisición de 24 meses y Bronze | Pruebas de ingesta, manifiestos, benchmark e integración | Jose Miguel | Santiago |
+| Diego / `diegogargo` | Procedencia, adquisición de 24 meses del pipeline (2024–2025) y Bronze | Pruebas de ingesta, manifiestos, benchmark e integración | Jose Miguel | Santiago |
 | Jose Miguel / `GUEVARA21` | Calidad, Silver y dos variables históricas | Pruebas de reglas, tiempo y consistencia entre capas | Santiago | Diego |
 | Santiago / `Skraeder` | EDA reutilizable, Gold y estacionalidad | Pruebas de agregados, interpretación y evaluación preliminar si corresponde | Diego | Jose Miguel |
 
@@ -32,7 +32,7 @@ Las ramas iniciales se preparan desde la misma base. Crear la rama no cuenta com
 | Jose Miguel | [#5](https://github.com/diegogargo/datosmasivos_vuelos/issues/5), [#8](https://github.com/diegogargo/datosmasivos_vuelos/issues/8), [#11](https://github.com/diegogargo/datosmasivos_vuelos/issues/11) | Silver, dos tasas históricas con disponibilidad verificable y validación completa |
 | Santiago | [#6](https://github.com/diegogargo/datosmasivos_vuelos/issues/6), [#9](https://github.com/diegogargo/datosmasivos_vuelos/issues/9), [#12](https://github.com/diegogargo/datosmasivos_vuelos/issues/12) | Gold/estacionalidad, modelo adicional del alcance confirmado y EDA de datos completos |
 
-Orden de ejecución: ingesta y primer mes Bronze → Silver → Gold y variables históricas → validación, análisis e integración → expansión y mediciones de los 24 meses. Las dependencias y criterios completos están en cada issue y en [la configuración de tareas](../config/github_tasks.json). Los contratos pueden acordarse mientras se prepara el workspace; la prueba final exige datos y tablas reales.
+Orden de ejecución: ingesta y primer mes Bronze → Silver → Gold y variables históricas → validación, análisis e integración → expansión y mediciones de los 24 meses del pipeline (2024–2025). Las dependencias y criterios completos están en cada issue y en [la configuración de tareas](../config/github_tasks.json). Los contratos pueden acordarse mientras se prepara el workspace; la prueba final exige datos y tablas reales.
 
 ## Guía individual
 - [Diego: por dónde empezar y qué entregar](team/diego.md).
@@ -43,3 +43,5 @@ Orden de ejecución: ingesta y primer mes Bronze → Silver → Gold y variables
 Las invitaciones fueron aceptadas y se verificó permiso de escritura de `GUEVARA21` y `Skraeder`. Las 12 tareas se asignan a sus responsables en GitHub. Cada persona trabaja con su cuenta y su rama.
 
 Al terminar, registrar enlaces reales en [collaboration_log.md](collaboration_log.md). No se cierran issues ni se marcan requisitos individuales solo porque la base ya tenga archivos similares. Informe y presentación siguen reservados para la entrega final.
+
+El EDA inicial de 2024–2025 permanece como antecedente. El pipeline se amplía a enero 2024–diciembre 2025 por elección de Diego. La separación temporal de evaluación deberá acordarse antes de modelar y reconocer los periodos ya explorados; no llamar prueba intacta a datos revisados en el EDA.

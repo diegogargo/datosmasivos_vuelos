@@ -28,8 +28,13 @@ python scripts/check_repository.py
 Añadir también el comando de tu nuevo verificador una vez implementado. Subir la rama y abrir PR hacia `main` con `Closes #1`, descripción del cambio y resultados. Solicitar revisión a Jose Miguel. No aprobar tu propio PR ni dar por cumplida su review antes de que él la envíe.
 
 ## Segundo parcial
-- [#4](https://github.com/diegogargo/datosmasivos_vuelos/issues/4): ingesta explícita y reanudable de 24 meses, memoria controlada y trazabilidad.
+- [#4](https://github.com/diegogargo/datosmasivos_vuelos/issues/4): ingesta explícita y reanudable de 24 meses completos (2024–2025), memoria controlada y trazabilidad.
 - [#7](https://github.com/diegogargo/datosmasivos_vuelos/issues/7): workspace y Bronze, empezando con un mes completo. Cada persona usa su identidad; verificar permisos y opciones de colaboración antes de elegir la edición.
 - [#10](https://github.com/diegogargo/datosmasivos_vuelos/issues/10): integrar los módulos de los tres y medir escala con resultados equivalentes.
 
 Tu entrega incluye código de ingesta, pruebas, manifiestos, documentación y mediciones propias. La subida inicial y esta guía son preparación asistida; la evidencia de tu tarea comienza con los cambios, ejecución y revisiones que realmente realices.
+
+## Avance técnico de Diego con Codex
+P1-01: verificador implementado y ejecutado, 15 pruebas nuevas y 42 pruebas totales aprobadas al abrir [PR #13](https://github.com/diegogargo/datosmasivos_vuelos/pull/13). Jose Miguel tiene solicitud de revisión; la revisión aún está pendiente.
+
+P2-01: selector de rango completo, extracción por bloques, fechas, hashes, reanudación y bloqueo implementados. `python -m src.ingestion.acquire_range --execute` usa el periodo aprobado de dos años. El reporte de adquisición indica la cobertura real, sin atribuir los resultados del EDA original al histórico ampliado.

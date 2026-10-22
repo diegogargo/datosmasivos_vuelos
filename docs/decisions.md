@@ -3,8 +3,8 @@
 ## 1. Preservar el trabajo del equipo
 **Decisión:** mantener el notebook original byte a byte y separar complementos reproducibles. **Razón:** conservar resultados y autoría histórica sin inventar ejecuciones nuevas. **Alternativa:** editar directamente el original. **Consecuencia:** hay antecedentes con rutas Colab; el README indica qué notebook se puede ejecutar ahora.
 
-## 2. Periodo vigente de dos años
-**Decisión:** 2024–2025 completos para la futura ejecución de escala; muestras para desarrollo. **Razón:** respetar el contexto y cubrir 24 meses. **Alternativas:** tres años (2023–2025) o limitar todo a muestra. **Consecuencia:** falta procesar y medir el volumen completo. Añadir 2023 puede fortalecer estacionalidad, pero no es requisito para continuar los parciales y no se descarga automáticamente.
+## 2. Periodo inicial de dos años (sustituido para el pipeline)
+**Decisión inicial:** 2024–2025, alcance del notebook del equipo. **Actualización:** el usuario eligió enero 2024–diciembre 2025 para el pipeline completo. El EDA inicial conserva dos años. Se documentan ambos periodos para no mezclar muestras, antecedentes y nuevos conteos de población.
 
 ## 3. Etiqueta y cancelaciones
 **Decisión:** `DepDelay >=15` solo para operados con resultado; cancelados conservados con etiqueta nula. **Razón:** no confundir cancelación con puntualidad. **Alternativa:** rellenar retraso nulo con cero. **Consecuencia:** denominador elegible explícito; se conservan retrasos negativos reales.
@@ -23,3 +23,8 @@
 
 ## 8. Colaboración verificable
 **Decisión:** cuatro tareas por persona y revisión cruzada, con PR y evidencia propios. **Razón:** acreditar aportes auténticos. **Alternativa:** simular commits/reviews con identidades ajenas. **Consecuencia:** la creación asistida inicial no completa el requisito individual; cada integrante debe trabajar, revisar y responder.
+
+## Ampliación a dos años
+El equipo decidió usar 2024–2025 completos para el pipeline, 24 meses. Se conserva sin alterar el EDA original de 2024–2025 y la muestra pública de enero 2025. El objetivo es medir procesamiento con vuelos completos y comparar años, no aumentar artificialmente el número de filas repitiendo la muestra.
+
+Bronze conservará todos los campos originales y sus metadatos. Los 21 campos del EDA seguirán como contrato analítico mínimo. La política temporal del futuro modelo debe tener en cuenta qué periodos ya se exploraron; el conjunto de prueba no se declara intacto retrospectivamente.
