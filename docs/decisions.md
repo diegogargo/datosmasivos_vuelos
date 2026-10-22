@@ -24,7 +24,7 @@
 ## 8. Colaboración verificable
 **Decisión:** cuatro tareas por persona y revisión cruzada, con PR y evidencia propios. **Razón:** acreditar aportes auténticos. **Alternativa:** simular commits/reviews con identidades ajenas. **Consecuencia:** la creación asistida inicial no completa el requisito individual; cada integrante debe trabajar, revisar y responder.
 
-## Ampliación a dos años
+## Alcance final y separación entre muestra y población
 El equipo decidió usar 2024–2025 completos para el pipeline, 24 meses. Se conserva sin alterar el EDA original de 2024–2025 y la muestra pública de enero 2025. El objetivo es medir procesamiento con vuelos completos y comparar años, no aumentar artificialmente el número de filas repitiendo la muestra.
 
 Bronze conservará todos los campos originales y sus metadatos. Los 21 campos del EDA seguirán como contrato analítico mínimo. La política temporal del futuro modelo debe tener en cuenta qué periodos ya se exploraron; el conjunto de prueba no se declara intacto retrospectivamente.
