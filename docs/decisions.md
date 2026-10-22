@@ -28,3 +28,20 @@
 El equipo decidió usar 2024–2025 completos para el pipeline, 24 meses. Se conserva sin alterar el EDA original de 2024–2025 y la muestra pública de enero 2025. El objetivo es medir procesamiento con vuelos completos y comparar años, no aumentar artificialmente el número de filas repitiendo la muestra.
 
 Bronze conservará todos los campos originales y sus metadatos. Los 21 campos del EDA seguirán como contrato analítico mínimo. La política temporal del futuro modelo debe tener en cuenta qué periodos ya se exploraron; el conjunto de prueba no se declara intacto retrospectivamente.
+
+## Históricos: disponibilidad declarada y prefijos acumulados
+
+Implementación de José Miguel asistida por Codex: los dos históricos de 28 días
+usan IDs BTS estables, mínimo 30 observaciones y prior fijo Beta(1,1). El modo
+predeterminado conserva tasas y conteos nulos; el experimento
+`retrospective_ideal` supone resultados disponibles al salir de puerta y declara
+`operational_validity=false`. No se interpreta la descarga ni la publicación
+mensual BTS como disponibilidad histórica en vivo; `publication_aware` se
+rechaza sin evidencia real de `available_at`.
+
+La ventana usa salidas estimadas en `[cutoff-28d, cutoff)` y excluye el propio
+vuelo. Su implementación resta prefijos acumulados en los dos extremos; evita
+reevaluar toda una ventana móvil por cada vuelo. Las pruebas comparan con un
+cálculo independiente, incluidas fronteras y tiempos iguales. Los reportes
+registran versión Delta de entrada y meses de contexto realmente disponibles.
+No se acredita operación en tiempo real ni estabilidad predictiva con dos años.

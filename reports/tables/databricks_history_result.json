@@ -1,0 +1,249 @@
+{
+  "layer": "silver_history",
+  "run_id": "7f1703b81b43499eb8ebba15bc9180f5",
+  "start": "2024-01",
+  "end": "2025-12",
+  "complete": true,
+  "started_at": "2026-10-22T10:16:43.809333+00:00",
+  "spark_version": "4.2.0",
+  "source_delta_version": 49,
+  "availability_mode": "retrospective_ideal",
+  "rates_computed": true,
+  "algorithm": "Cumulative counts at cutoff-1s minus cutoff-28days-1s, own-flight subtraction",
+  "source_context_months": {
+    "2025-12": 582304,
+    "2024-10": 615497,
+    "2025-11": 570546,
+    "2024-01": 547271,
+    "2025-04": 583950,
+    "2024-02": 519221,
+    "2024-04": 582185,
+    "2024-12": 590581,
+    "2025-02": 504884,
+    "2025-03": 600872,
+    "2024-06": 611132,
+    "2024-08": 619024,
+    "2025-01": 539747,
+    "2025-10": 605844,
+    "2024-03": 591767,
+    "2024-05": 609743,
+    "2025-08": 602378,
+    "2024-11": 575398,
+    "2024-07": 634613,
+    "2025-07": 631428,
+    "2025-06": 611575,
+    "2025-09": 562439,
+    "2025-05": 605648,
+    "2024-09": 582622
+  },
+  "operational_validity": false,
+  "min_history": 30,
+  "smoothing": "Beta(1,1): (delayed+1)/(n+2)",
+  "window": "Estimated actual gate departures in [prediction_cutoff_utc-28 days, prediction_cutoff_utc); own flight excluded",
+  "assumption": "Ideal immediate outcome at scheduled_utc + DepDelay; BTS monthly publication is NOT historical event availability",
+  "context_limits": "Only accepted Silver rows available; January 2024 has no December 2023 context; quarantined flights excluded",
+  "months": [
+    {
+      "period": "2024-01",
+      "source_rows": 547271,
+      "history_rows": 547271,
+      "origin_hour_nonnull": 454562,
+      "airline_nonnull": 544252
+    },
+    {
+      "period": "2024-02",
+      "source_rows": 519221,
+      "history_rows": 519221,
+      "origin_hour_nonnull": 493428,
+      "airline_nonnull": 519221
+    },
+    {
+      "period": "2024-03",
+      "source_rows": 591767,
+      "history_rows": 591767,
+      "origin_hour_nonnull": 563876,
+      "airline_nonnull": 591767
+    },
+    {
+      "period": "2024-04",
+      "source_rows": 582185,
+      "history_rows": 582185,
+      "origin_hour_nonnull": 557443,
+      "airline_nonnull": 582185
+    },
+    {
+      "period": "2024-05",
+      "source_rows": 609743,
+      "history_rows": 609743,
+      "origin_hour_nonnull": 582549,
+      "airline_nonnull": 609743
+    },
+    {
+      "period": "2024-06",
+      "source_rows": 611132,
+      "history_rows": 611132,
+      "origin_hour_nonnull": 582631,
+      "airline_nonnull": 611132
+    },
+    {
+      "period": "2024-07",
+      "source_rows": 634613,
+      "history_rows": 634613,
+      "origin_hour_nonnull": 607257,
+      "airline_nonnull": 634613
+    },
+    {
+      "period": "2024-08",
+      "source_rows": 619024,
+      "history_rows": 619024,
+      "origin_hour_nonnull": 592076,
+      "airline_nonnull": 619024
+    },
+    {
+      "period": "2024-09",
+      "source_rows": 582622,
+      "history_rows": 582622,
+      "origin_hour_nonnull": 556445,
+      "airline_nonnull": 582622
+    },
+    {
+      "period": "2024-10",
+      "source_rows": 615497,
+      "history_rows": 615497,
+      "origin_hour_nonnull": 588215,
+      "airline_nonnull": 615497
+    },
+    {
+      "period": "2024-11",
+      "source_rows": 575398,
+      "history_rows": 575398,
+      "origin_hour_nonnull": 549460,
+      "airline_nonnull": 575398
+    },
+    {
+      "period": "2024-12",
+      "source_rows": 590581,
+      "history_rows": 590581,
+      "origin_hour_nonnull": 562855,
+      "airline_nonnull": 590581
+    },
+    {
+      "period": "2025-01",
+      "source_rows": 539747,
+      "history_rows": 539747,
+      "origin_hour_nonnull": 515158,
+      "airline_nonnull": 539747
+    },
+    {
+      "period": "2025-02",
+      "source_rows": 504884,
+      "history_rows": 504884,
+      "origin_hour_nonnull": 479192,
+      "airline_nonnull": 504884
+    },
+    {
+      "period": "2025-03",
+      "source_rows": 600872,
+      "history_rows": 600872,
+      "origin_hour_nonnull": 573555,
+      "airline_nonnull": 600872
+    },
+    {
+      "period": "2025-04",
+      "source_rows": 583950,
+      "history_rows": 583950,
+      "origin_hour_nonnull": 559197,
+      "airline_nonnull": 583950
+    },
+    {
+      "period": "2025-05",
+      "source_rows": 605648,
+      "history_rows": 605648,
+      "origin_hour_nonnull": 578738,
+      "airline_nonnull": 605648
+    },
+    {
+      "period": "2025-06",
+      "source_rows": 611575,
+      "history_rows": 611575,
+      "origin_hour_nonnull": 582460,
+      "airline_nonnull": 611575
+    },
+    {
+      "period": "2025-07",
+      "source_rows": 631428,
+      "history_rows": 631428,
+      "origin_hour_nonnull": 603761,
+      "airline_nonnull": 631428
+    },
+    {
+      "period": "2025-08",
+      "source_rows": 602378,
+      "history_rows": 602378,
+      "origin_hour_nonnull": 575626,
+      "airline_nonnull": 602378
+    },
+    {
+      "period": "2025-09",
+      "source_rows": 562439,
+      "history_rows": 562439,
+      "origin_hour_nonnull": 537438,
+      "airline_nonnull": 562439
+    },
+    {
+      "period": "2025-10",
+      "source_rows": 605844,
+      "history_rows": 605844,
+      "origin_hour_nonnull": 578442,
+      "airline_nonnull": 605844
+    },
+    {
+      "period": "2025-11",
+      "source_rows": 570546,
+      "history_rows": 570546,
+      "origin_hour_nonnull": 542981,
+      "airline_nonnull": 570546
+    },
+    {
+      "period": "2025-12",
+      "source_rows": 582304,
+      "history_rows": 582304,
+      "origin_hour_nonnull": 554030,
+      "airline_nonnull": 582304
+    }
+  ],
+  "rows": 14080669,
+  "target_delta_version": 1,
+  "finished_at": "2026-10-22T10:17:44.513859+00:00",
+  "local_code_sha256": {
+    "src/__init__.py": "be68e600ad32f96327b5fea7645e6b680b35157d476045b1cce4c9966fdb220b",
+    "src/analysis/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/analysis/benchmark.py": "af6068074fac8ed0ceee73aba56659d9041d574d808ef992ec19bcc2a8ef5176",
+    "src/analysis/benchmark_scale.py": "cdf53ea2478564cb57b2dbe3568835e3b208d35afb3eb13c1683a98573696c59",
+    "src/ingestion/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/ingestion/acquire_range.py": "d1146e7c018ee3cdf1adfda019a67932e3f99b9f8e7460e41e40d1154e0b32ae",
+    "src/ingestion/bronze.py": "398a6cabd851e3fc439c9a0869f9f655689250e6c89724658fb34160cd8cfd30",
+    "src/ingestion/bts.py": "46101717ac19b93f1918a01860be4db5f702494b83489de4067ae917b182eb80",
+    "src/ingestion/validate_provenance.py": "e64cd2ac00657a407d28742cc670502b334d53c02bf3a0c8ebbe06c14783cfae",
+    "src/processing/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/processing/build_dataset.py": "56e6d4ab1058667c992c2bd43ea0a1aeabd60b99c02ff81a9e44be90502319ae",
+    "src/processing/contracts.py": "c5981ff73505ba1d89dd0c0f8468bd8e58ecc4f0263eb3189104d429d8514774",
+    "src/processing/delta_io.py": "0eea9e0829e8d5b6fa4894f7ca3fea856350358c4b8e06cc5f5458623bac7be8",
+    "src/processing/historical_features.py": "5aa962d27945c02b5b573736c8a5a6958e5aeff4ff734faa5b51ca2d84ab74ab",
+    "src/processing/silver.py": "997a3a0695b3e6a066779af1731733805d43d0c7590e6ef3f4dcdc1c1a2299dd",
+    "src/processing/temporal.py": "36858c1c894ac4d58e4d7df0ed39d6b961fc5ba52b99959edc040670fc990328",
+    "src/utils/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/utils/common.py": "8a71af68debf036f36717fadd55001fa8fb67610cccb10c2307beb6cb059432f",
+    "src/validation/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/validation/audit_sample.py": "99e9c620729a99a742f38e16fd046dd59621f88cf7df94c9200acd1910efbb36",
+    "src/validation/validate_acquisition.py": "4e6da88ac49d50ebaaf7d6fcd0e2517d4279100e9e3ecdde450a8b1a61936d97",
+    "src/validation/validate_dataset.py": "61c14b3de78c3320731a6ad48a3636fcb8f3c1567b94c17459227300e4c64bfa",
+    "src/validation/validate_layers.py": "d0b9c5259deb85be7c21b1fa49a34eb705e655be0bbf0dfa682a42e9530d6c8b",
+    "data/reference/airport_timezones.csv": "67412696ead340ca0a69c35974f7f034e6f46038093d33d5f4667d7b038417fc",
+    "data/reference/airport_timezones.provenance.json": "2c76fc936d93f6395017462079df27efb7d13fdcdf68fb5a34017972825cd6ed",
+    "data/reference/AIRPORTSDATA_LICENSE.txt": "1ab6bf365e1f6a1883ab6a2f797e761b221081b52a33273d86c157fd562106be",
+    "notebooks/databricks/02_silver.py": "c5b8081aea17134496a61d091ebea4914fa6dc410fbf397047f936b96f2aec35",
+    "notebooks/databricks/03_history_validation.py": "0f599fde2f6dae94f8156b5bd4573a941f8f5856eeb4a39cb397747b2191d01c"
+  },
+  "execution_role": "Código de Jose Miguel asistido por Codex; workspace de integración de Diego."
+}

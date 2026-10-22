@@ -1,0 +1,47 @@
+{
+  "tests": {
+    "passed": 8
+  },
+  "scope": "Local Spark temporal boundary and leakage tests; synthetic",
+  "prepared_at": "2026-10-22T10:24:15.793428+00:00",
+  "ai_assistance": "Codex",
+  "original_notebook_sha256": "242eb31ac2994ba10a9ccb3f3a4d6390e661728c87e7774d4f0d7e1fbb8ff358",
+  "baseline_diego": "6c4668e6d9ac3d7f72a1c241f664d279b3a3047d",
+  "regression_tests": {
+    "passed": 82,
+    "seconds": 2.29
+  },
+  "databricks_execution": "24 months historical output verified",
+  "human_review": "Pending Skraeder",
+  "code_sha256": {
+    "src/processing/historical_features.py": "5aa962d27945c02b5b573736c8a5a6958e5aeff4ff734faa5b51ca2d84ab74ab",
+    "tests/test_historical_features.py": "430e59d338dd39e1e1a6ddc1f4f03e9ed020607d099e99ed68b31d59357c1e20",
+    "notebooks/databricks/03_historical_features.py": "92548fefa1e5fc542eac43abbe40586163bcb11e1d620e9a028e61187fa21ecc",
+    ".github/workflows/spark.yml": "9231d59698807eccc676f5232e4e3de5d7bce3d754b30788d7b1f5dcc49c593f"
+  },
+  "code_hash_scope": "Git committed file bytes",
+  "tested_working_source_sha256": "5aa962d27945c02b5b573736c8a5a6958e5aeff4ff734faa5b51ca2d84ab74ab",
+  "algorithm": "Difference of cumulative prefixes, independent 100-row brute-force comparison",
+  "assembled_local_suite": {
+    "passed": 105,
+    "pytest_seconds": 391.05,
+    "process_exit_code": 0,
+    "python_version": "3.13.15",
+    "pyspark_version": "4.2.0",
+    "source_sha256": {
+      "src/processing/silver.py": "997a3a0695b3e6a066779af1731733805d43d0c7590e6ef3f4dcdc1c1a2299dd",
+      "src/processing/historical_features.py": "5aa962d27945c02b5b573736c8a5a6958e5aeff4ff734faa5b51ca2d84ab74ab",
+      "src/validation/validate_layers.py": "d0b9c5259deb85be7c21b1fa49a34eb705e655be0bbf0dfa682a42e9530d6c8b"
+    },
+    "validated_at": "2026-10-22T10:04:42.592816+00:00",
+    "scope": "Assembled local workspace containing all three Jose P2 modules and Diego baseline; individual stacked PRs contain subsets",
+    "synthetic_data": "Spark tests include synthetic Gold contracts; this is not a real Gold execution"
+  },
+  "local_qa_status": "105 passed on corrected sources; remote execution pending",
+  "complete_local_suite": {
+    "passed": 105,
+    "seconds": 392.25117780000437,
+    "scope": "Assembled workspace with all three tasks; individual PRs contain subsets"
+  },
+  "runtime_report": "reports/tables/databricks_history_result.json"
+}
