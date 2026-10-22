@@ -1,0 +1,12 @@
+{
+  "period": "2025-01",
+  "mode": "independent_pandas_reference_from_original_csv",
+  "source_csv_sha256": "d7c7d59452cad1215d9605e8ff350a4bad7282750765084fe57928a5ad275453",
+  "rows": 539747,
+  "cancelled_rows": 16312,
+  "eligible_departures": 523435,
+  "delayed_departures": 95432,
+  "null_cancelled": 0,
+  "null_diverted": 0,
+  "note": "Reference over the real full monthly CSV, not a Spark execution"
+}
