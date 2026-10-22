@@ -5,6 +5,13 @@
 # MAGIC propuestos; seleccionar el catálogo disponible de la cuenta antes de ejecutar.
 
 # COMMAND ----------
+from pathlib import Path
+import sys
+for candidate in [Path.cwd(), *Path.cwd().parents]:
+    if (candidate / 'src/ingestion/bronze.py').is_file():
+        sys.path.insert(0, str(candidate))
+        break
+
 dbutils.widgets.text('catalog', 'workspace')
 dbutils.widgets.text('volume', 'vuelos_raw')
 catalog = dbutils.widgets.get('catalog')

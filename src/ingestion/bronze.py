@@ -9,7 +9,7 @@ import re
 import uuid
 from pathlib import Path
 
-from src.ingestion.acquire_range import months
+from src.ingestion.acquire_range import extract_csv, months
 from src.processing.contracts import COLUMNS
 from src.utils.common import digest, now, read_json, write_json
 
@@ -70,6 +70,20 @@ def verify_source(root, period, item):
     return contained_file(root, item['csv_path']), names
 
 
+def materialize_csv(root, period, item):
+    """Permite transferir solo ZIP y manifiesto; reconstruye el CSV en el Volume."""
+    if item.get('period') != period or item.get('csv_path') != f'data/raw/csv/{period}/flights.csv':
+        raise ValueError('Periodo o ruta CSV incoherente')
+    zip_path = contained_file(root, item['path'])
+    if digest(zip_path) != item.get('sha256'):
+        raise ValueError('Hash ZIP incorrecto antes de descomprimir')
+    rebuilt = extract_csv(zip_path, item, root)
+    for key in ('csv_sha256', 'csv_bytes', 'csv_rows', 'csv_columns', 'csv_header'):
+        if rebuilt.get(key) != item.get(key):
+            raise ValueError(f'CSV reconstruido distinto del adquirido: {key}')
+    return rebuilt
+
+
 def volume_root_path(value):
     path = Path(value)
     if not str(value).startswith('/Volumes/') or len(path.parts) < 5 or '..' in path.parts:
@@ -99,9 +113,11 @@ def run_bronze(spark, volume_root, table, start='2025-01', end='2025-01', run_id
             item = manifest['files'].get(period)
             if item is None:
                 raise ValueError(f'Mes no adquirido: {period}')
+            materialize_csv(root, period, item)
             path, names = verify_source(root, period, item)
             if schema_names is None:
                 schema_names = names
+                report['header_mapping'] = dict(zip(names, item['csv_header']))
             if names != schema_names:
                 raise ValueError('Cambio de esquema entre meses; requiere decisión explícita')
             schema = StructType([StructField(name, StringType(), True) for name in names])
@@ -139,7 +155,7 @@ def run_bronze(spark, volume_root, table, start='2025-01', end='2025-01', run_id
             history = spark.sql(f'DESCRIBE HISTORY {quoted} LIMIT 1').first()
             report['months'].append(dict(period=period, source_rows=rows, bronze_rows=actual_rows,
                 delta_version=history['version'], csv_sha256=item['csv_sha256'],
-                original_columns=len(names), header_mapping=dict(zip(names, item['csv_header']))))
+                original_columns=len(names)))
             write_json(report_path, report)
         report.update(complete=True, finished_at=now(), rows=sum(x['bronze_rows'] for x in report['months']))
     except Exception as exc:

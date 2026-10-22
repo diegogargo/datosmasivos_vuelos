@@ -1,28 +1,30 @@
-# Preparación de Databricks
+# Databricks: preparación y ejecución de Diego
 
-## Estado
-El equipo confirmó que todavía no tiene workspace. No hay catálogo, Volume, tablas Delta, runtime o job real verificado. La base local no se presenta como ejecución en Databricks. Responsable inicial: Diego, issue P2-04; Jose Miguel revisa. Silver: Jose Miguel; Gold/EDA: Santiago.
+## Estado comprobado
+Diego mostró un workspace de **Free Edition**. El perfil `vuelos` quedó autenticado mediante la CLI oficial. La captura y el perfil no demuestran aún una carga Delta: confirmar el resultado de la ejecución en `reports/tables/databricks_bronze_result.json`.
 
-## Ruta de inicio
-1. Revisar [Databricks Free Edition](https://docs.databricks.com/aws/en/getting-started/free-edition) y sus [limitaciones](https://docs.databricks.com/aws/en/getting-started/free-edition-limitations). Es una opción educativa con cómputo serverless y cuotas; verificar colaboración/permisos antes de elegir una cuenta compartida. Cada persona mantiene su identidad y credenciales.
-2. El integrante crea su cuenta/workspace y completa por sí mismo las condiciones de registro. Registrar abajo los nombres reales, sin tokens.
-3. Confirmar catálogo disponible y permisos. Crear los esquemas `bronze`, `silver`, `gold` dentro del catálogo autorizado y un Volume para archivos de origen si se cuenta con permisos.
-4. [Cargar archivos a un Volume](https://docs.databricks.com/aws/en/volumes/volume-files). Ruta de ejemplo, no existente: `/Volumes/CATALOGO/ESQUEMA/VOLUME/`. Conservar ZIP y manifiesto; descomprimir el CSV antes de leerlo con Spark. No usar una ruta DBFS inventada.
-5. Comenzar con enero 2025 completo. Declarar esquema, conservar procedencia y escribir Bronze en Delta. Registrar conteos, versión y evidencia del job.
-6. Implementar Silver con el contrato validado localmente, más zonas horarias y reglas históricas. Construir Gold y conciliar agregados; después escalar a los 24 meses.
-7. Conservar logs/reportes pequeños y enlaces del workspace permitidos por el equipo; datos completos y secretos quedan fuera de GitHub.
+El entorno aislado de Codex no puede usar el almacén seguro de Windows. El ejecutor se lanza desde PowerShell del integrante y conserva ese mecanismo de autenticación. No solicita ni imprime tokens y no cambia su almacenamiento. Los enlaces privados quedan en `data/raw/databricks_runs_private.json`, excluido de Git. El repositorio público no contiene la dirección del workspace.
 
-La edición gratuita puede restringir salidas a internet y detener cómputo por cuotas. Si no permite descargar BTS desde el workspace, usar el downloader local y subir los CSV/manifiestos al Volume. Confirmar capacidades reales antes de planear tareas simultáneas.
+## Ejecución automatizada
+1. Instalar la [CLI oficial](https://docs.databricks.com/aws/en/dev-tools/cli/install) y autenticar el perfil con `databricks auth login --profile vuelos --configure-serverless`. Completar personalmente el inicio de sesión.
+2. Instalar las dependencias locales del repositorio. Adquirir un mes con `python -m src.ingestion.bts --year 2025 --month 1`, o el periodo configurado mediante `python -m src.ingestion.acquire_range --execute`.
+3. Consultar `python scripts/run_databricks.py`. No modifica el workspace hasta añadir `--execute`.
+4. Ejecutar `python scripts/run_databricks.py --profile vuelos --execute`. Si la CLI no está en PATH, añadir `--cli RUTA_DEL_EJECUTABLE`. El catálogo propuesto es `workspace`; el programa comprueba que esté disponible. Elegir otro con `--catalog NOMBRE_REAL` cuando corresponda.
+5. El ejecutor carga el código en una carpeta propia del usuario, ejecuta `00_setup`, transfiere el ZIP de enero 2025 y su manifiesto, y ejecuta `01_bronze`. Crea los esquemas del proyecto y un Volume, conserva todos los campos y concilia los conteos. No modifica notebooks anteriores.
+6. Esperar `BRONZE CORRECTO` y comprobar el reporte, Spark, periodo y conteos. Repetir el mismo mes para comprobar que el volumen no se duplica.
+7. Para los dos años completos, con los 24 ZIP ya adquiridos: `python scripts/run_databricks.py --profile vuelos --start 2024-01 --end 2025-12 --execute`. Se transfieren ZIP y manifiesto; el CSV idéntico se reconstruye por bloques en el Volume y se coteja con el hash adquirido localmente.
 
-## Registro a completar durante ejecución
-| Campo | Valor |
-|---|---|
-| Edición y workspace | Pendiente |
-| Catálogo / esquemas | Pendiente |
-| Volume y ruta | Pendiente |
-| Runtime / versión Spark | Pendiente |
-| Mes inicial y conteos Bronze/Silver/Gold | Pendiente |
-| Enlace de notebook/job y fecha | Pendiente |
-| Restricciones verificadas | Pendiente |
+La carga funciona por meses y `replaceWhere` sustituye únicamente el mes correspondiente. Una interrupción puede dejar meses anteriores completados; volver a ejecutar el rango es seguro para los conteos. Una revisión de BTS que cambie un original requiere decisión explícita y no se mezcla silenciosamente con el CSV anterior.
 
-No incluir URL con tokens, correos privados, contraseñas, claves o cadenas de conexión.
+## Capacidad y colaboración
+[Free Edition](https://docs.databricks.com/aws/en/getting-started/free-edition) usa cómputo serverless y tiene [cuotas y restricciones](https://docs.databricks.com/aws/en/getting-started/free-edition-limitations). Validar un mes antes de ampliar; no se promete que los 24 meses quepan en una cuota diaria. El ejecutor no contrata planes ni amplía recursos de pago.
+
+Cada integrante conserva su propia identidad. Verificar opciones de acceso y colaboración de la edición real; si trabajan en workspaces separados, GitHub transmite el código y cada cuenta ejecuta sus capas con sus archivos. No compartir credenciales. Silver pertenece a Jose Miguel y Gold a Santiago.
+
+## Evidencia que aún debe verificarse
+- Catálogo, permisos de Volume y primera ejecución real.
+- Conteos originales y Bronze de cada mes, versión Spark y versión Delta.
+- Reejecución de un mes sin duplicación y cobertura completa 2024–2025.
+- Ejecución posterior de Silver/Gold e integración de sus PR revisados.
+
+Referencia: [archivos en Volumes](https://docs.databricks.com/aws/en/volumes/volume-files) y [sobrescritura selectiva Delta](https://docs.databricks.com/aws/en/delta/selective-overwrite).
