@@ -86,6 +86,16 @@ La regeneración lee el CSV mensual completo en memoria antes de muestrear. La i
 Abrir `notebooks/01_exploration.ipynb` en VS Code o Jupyter con el entorno anterior. Para Jupyter instalar `jupyterlab` e `ipykernel` en ese entorno. Los antecedentes conservan rutas y dependencias originales de Colab; no se ejecutan en CI.
 
 ## Cómo participa cada integrante
+Cada integrante tiene un módulo técnico completo con pruebas y documentación. Los tres pueden comenzar P1 con la muestra, sin esperar al workspace:
+
+| Integrante | Primera entrega propia | Guía |
+|---|---|---|
+| Diego | Verificador de procedencia CSV/Parquet, periodo y metadatos | [Guía de Diego](docs/team/diego.md) |
+| Jose Miguel | Nuevas reglas de calidad con errores inyectados | [Guía de Jose Miguel](docs/team/jose_miguel.md) |
+| Santiago | Módulo de EDA reutilizable con pruebas e interpretación | [Guía de Santiago](docs/team/santiago.md) |
+
+La carga inicial y esta planificación son base asistida; las contribuciones individuales se acreditan con cambios y revisiones reales de cada cuenta.
+
 Comenzar por el [reparto de tareas](docs/team_workplan.md), la [guía de contribución](CONTRIBUTING.md) y el [registro de evidencias](docs/collaboration_log.md). [Issues publicados](https://github.com/diegogargo/datosmasivos_vuelos/issues).
 
 ## Documentación

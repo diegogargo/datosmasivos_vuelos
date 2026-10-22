@@ -13,7 +13,7 @@
     "url": "https://github.com/diegogargo/datosmasivos_vuelos/issues/2",
     "assignee": "GUEVARA21",
     "reviewer": "Skraeder",
-    "assigned": false
+    "assigned": true
   },
   {
     "id": "P1-03",
@@ -21,7 +21,7 @@
     "url": "https://github.com/diegogargo/datosmasivos_vuelos/issues/3",
     "assignee": "Skraeder",
     "reviewer": "diegogargo",
-    "assigned": false
+    "assigned": true
   },
   {
     "id": "P2-01",
@@ -37,7 +37,7 @@
     "url": "https://github.com/diegogargo/datosmasivos_vuelos/issues/5",
     "assignee": "GUEVARA21",
     "reviewer": "Skraeder",
-    "assigned": false
+    "assigned": true
   },
   {
     "id": "P2-03",
@@ -45,7 +45,7 @@
     "url": "https://github.com/diegogargo/datosmasivos_vuelos/issues/6",
     "assignee": "Skraeder",
     "reviewer": "diegogargo",
-    "assigned": false
+    "assigned": true
   },
   {
     "id": "P2-04",
@@ -61,7 +61,7 @@
     "url": "https://github.com/diegogargo/datosmasivos_vuelos/issues/8",
     "assignee": "GUEVARA21",
     "reviewer": "Skraeder",
-    "assigned": false
+    "assigned": true
   },
   {
     "id": "P2-06",
@@ -69,7 +69,7 @@
     "url": "https://github.com/diegogargo/datosmasivos_vuelos/issues/9",
     "assignee": "Skraeder",
     "reviewer": "diegogargo",
-    "assigned": false
+    "assigned": true
   },
   {
     "id": "P2-07",
@@ -85,7 +85,7 @@
     "url": "https://github.com/diegogargo/datosmasivos_vuelos/issues/11",
     "assignee": "GUEVARA21",
     "reviewer": "Skraeder",
-    "assigned": false
+    "assigned": true
   },
   {
     "id": "P2-09",
@@ -93,6 +93,6 @@
     "url": "https://github.com/diegogargo/datosmasivos_vuelos/issues/12",
     "assignee": "Skraeder",
     "reviewer": "diegogargo",
-    "assigned": false
+    "assigned": true
   }
 ]
