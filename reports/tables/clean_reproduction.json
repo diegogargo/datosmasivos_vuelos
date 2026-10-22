@@ -1,0 +1,23 @@
+{
+  "executed_at": "2026-10-22T02:26:09.158866+00:00",
+  "source_commit": "c5bc98359d9a33b33d0eb1c24af9761b5285e90c",
+  "method": "git archive de un commit publicado, extraído en una carpeta nueva sin datos raw; entorno de dependencias existente",
+  "python_version": "3.13.15",
+  "pytest": {
+    "passed": 82,
+    "failed": 0,
+    "duration_seconds": 2.21
+  },
+  "local_components_passed": true,
+  "acquisition_metadata_passed": true,
+  "raw_hashes_rechecked_in_clean_copy": false,
+  "original_notebook_sha256": "242eb31ac2994ba10a9ccb3f3a4d6390e661728c87e7774d4f0d7e1fbb8ff358",
+  "original_notebook_unchanged": true,
+  "guide_python_blocks_parsed": 6,
+  "team_integration_complete": false,
+  "limitations": [
+    "No es una instalación nueva de dependencias; CI comprueba la instalación en Linux.",
+    "La copia limpia usa la muestra versionada y los reportes pequeños; no incluye datos masivos.",
+    "No acredita ejecución Bronze/Silver/Gold completa ni revisiones humanas."
+  ]
+}

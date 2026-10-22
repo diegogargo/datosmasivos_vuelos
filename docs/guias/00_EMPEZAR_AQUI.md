@@ -12,6 +12,8 @@ Esta guía se lee primero. Después cada integrante abre únicamente su guía pe
 
 Repositorio único: https://github.com/diegogargo/datosmasivos_vuelos
 
+Las guías nuevas están publicadas en [docs/guias de la rama diego/p2-07](https://github.com/diegogargo/datosmasivos_vuelos/tree/diego/p2-07/docs/guias), dentro del [PR #16](https://github.com/diegogargo/datosmasivos_vuelos/pull/16). Hasta que ese PR se integre, pueden no aparecer en main. Abran esa ruta en GitHub o usen las copias del ZIP para copiar los prompts. Sus primeras ramas P1 parten de main: no copien a sus PR los cambios de Diego para conseguir las guías. En P2, incorporar la base del pipeline después de su revisión e integración.
+
 No creen otro repositorio ni otro proyecto de vuelos. El notebook de partida es `notebooks/antecedentes/Proyecto_Notebook_original.ipynb`, que permanece intacto. El EDA usa una muestra; el pipeline usa los **24 meses completos de enero 2024 a diciembre 2025**. La adquisición nueva tiene **14,080,680 vuelos**. La muestra pública de enero 2025 tiene 5,000 filas. Las salidas históricas de 120,000 filas no son un archivo recuperado ni el total de vuelos.
 
 ## 2. Conectar ChatGPT y Codex a GitHub

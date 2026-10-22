@@ -15,7 +15,7 @@ TEXT = {'FlightDate', 'Reporting_Airline', 'Tail_Number', 'Origin', 'Dest'}
 
 
 def validate(csv_path, parquet_path, manifest_path, expected_period='2025-01'):
-    """Retorna un reporte de comprobaciones; nunca convierte un fallo en �xito."""
+    """Retorna un reporte de comprobaciones; nunca convierte un fallo en éxito."""
     checks = []
 
     def check(name, passed, detail=''):
