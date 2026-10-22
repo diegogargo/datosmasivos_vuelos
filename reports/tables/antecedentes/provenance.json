@@ -1,0 +1,14 @@
+{
+  "source": "Proyecto_Notebook_original.ipynb",
+  "sha256": "242eb31ac2994ba10a9ccb3f3a4d6390e661728c87e7774d4f0d7e1fbb8ff358",
+  "evidence_type": "stored_notebook_outputs_not_reexecuted",
+  "cells": 22,
+  "cells_with_outputs": 21,
+  "historical_sample_rows": 120000,
+  "eligible_departures": 118273,
+  "positive_delays": 44413,
+  "monthly_correlation_saved": 0.711,
+  "monthly_mean_absolute_difference_pp_saved": 2.89,
+  "original_historical_parquet_available": false,
+  "note": "Salidas conservadas del original. execution_count no certifica ejecución ordenada; varias celdas tienen salida y contador nulo."
+}

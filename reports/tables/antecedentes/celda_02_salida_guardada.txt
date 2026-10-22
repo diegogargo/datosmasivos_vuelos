@@ -1,0 +1,161 @@
+Registros originales: 539,747
+Columnas originales: 110
+
+Registros seleccionados: 5,000
+Columnas disponibles: 110
+
+   Year  Quarter  Month  DayofMonth  DayOfWeek  FlightDate Reporting_Airline  \
+0  2025        1      1          29          3  2025-01-29                OO   
+1  2025        1      1          13          1  2025-01-13                AS   
+2  2025        1      1          20          1  2025-01-20                DL   
+3  2025        1      1          17          5  2025-01-17                WN   
+4  2025        1      1          18          6  2025-01-18                G4   
+
+   DOT_ID_Reporting_Airline IATA_CODE_Reporting_Airline Tail_Number  \
+0                     20304                          OO      N705SK   
+1                     19930                          AS      N713AL   
+2                     19790                          DL      N370NB   
+3                     19393                          WN      N8879Q   
+4                     20368                          G4       279NV   
+
+   Flight_Number_Reporting_Airline  OriginAirportID  OriginAirportSeqID  \
+0                             6279            13930             1393008   
+1                              700            14747             1474703   
+2                             2970            13487             1348702   
+3                             1289            10821             1082106   
+4                             1808            10135             1013506   
+
+   OriginCityMarketID Origin                  OriginCityName OriginState  \
+0               30977    ORD                     Chicago, IL          IL   
+1               30559    SEA                     Seattle, WA          WA   
+2               31650    MSP                 Minneapolis, MN          MN   
+3               30852    BWI                   Baltimore, MD          MD   
+4               30135    ABE  Allentown/Bethlehem/Easton, PA          PA   
+
+   OriginStateFips OriginStateName  OriginWac  DestAirportID  \
+0               17        Illinois         41          10693   
+1               53      Washington         93          14107   
+2               27       Minnesota         63          11298   
+3               24        Maryland         35          11259   
+4               42    Pennsylvania         23          14761   
+
+   DestAirportSeqID  DestCityMarketID Dest           DestCityName DestState  \
+0           1069302             30693  BNA          Nashville, TN        TN   
+1           1410702             30466  PHX            Phoenix, AZ        AZ   
+2           1129806             30194  DFW  Dallas/Fort Worth, TX        TX   
+3           1125904             30194  DAL             Dallas, TX        TX   
+4           1476107             34761  SFB            Sanford, FL        FL   
+
+   DestStateFips DestStateName  DestWac  CRSDepTime  DepTime  DepDelay  \
+0             47     Tennessee       54        1730   1727.0      -3.0   
+1              4       Arizona       81        1259   1252.0      -7.0   
+2             48         Texas       74        1025   1039.0      14.0   
+3             48         Texas       74         845    903.0      18.0   
+4             12       Florida       33         700    647.0     -13.0   
+
+   DepDelayMinutes  DepDel15  DepartureDelayGroups DepTimeBlk  TaxiOut  \
+0              0.0       0.0                  -1.0  1700-1759     20.0   
+1              0.0       0.0                  -1.0  1200-1259     14.0   
+2             14.0       0.0                   0.0  1000-1059     11.0   
+3             18.0       1.0                   1.0  0800-0859     11.0   
+4              0.0       0.0                  -1.0  0700-0759     27.0   
+
+   WheelsOff  WheelsOn  TaxiIn  CRSArrTime  ArrTime  ArrDelay  \
+0     1747.0    1841.0    12.0        1900   1853.0      -7.0   
+1     1306.0    1622.0     6.0        1650   1628.0     -22.0   
+2     1050.0    1249.0     8.0        1310   1257.0     -13.0   
+3      914.0    1109.0     6.0        1125   1115.0     -10.0   
+4      714.0     930.0     4.0         944    934.0     -10.0   
+
+   ArrDelayMinutes  ArrDel15  ArrivalDelayGroups ArrTimeBlk  Cancelled  \
+0              0.0       0.0                -1.0  1900-1959        0.0   
+1              0.0       0.0                -2.0  1600-1659        0.0   
+2              0.0       0.0                -1.0  1300-1359        0.0   
+3              0.0       0.0                -1.0  1100-1159        0.0   
+4              0.0       0.0                -1.0  0900-0959        0.0   
+
+  CancellationCode  Diverted  ...  LateAircraftDelay  FirstDepTime  \
+0              NaN       0.0  ...                NaN           NaN   
+1              NaN       0.0  ...                NaN           NaN   
+2              NaN       0.0  ...                NaN           NaN   
+3              NaN       0.0  ...                NaN           NaN   
+4              NaN       0.0  ...                NaN           NaN   
+
+   TotalAddGTime  LongestAddGTime  DivAirportLandings  DivReachedDest  \
+0            NaN              NaN                   0             NaN   
+1            NaN              NaN                   0             NaN   
+2            NaN              NaN                   0             NaN   
+3            NaN              NaN                   0             NaN   
+4            NaN              NaN                   0             NaN   
+
+   DivActualElapsedTime  DivArrDelay  DivDistance  Div1Airport  Div1AirportID  \
+0                   NaN          NaN          NaN          NaN            NaN   
+1                   NaN          NaN          NaN          NaN            NaN   
+2                   NaN          NaN          NaN          NaN            NaN   
+3                   NaN          NaN          NaN          NaN            NaN   
+4                   NaN          NaN          NaN          NaN            NaN   
+
+   Div1AirportSeqID  Div1WheelsOn  Div1TotalGTime  Div1LongestGTime  \
+0               NaN           NaN             NaN               NaN   
+1               NaN           NaN             NaN               NaN   
+2               NaN           NaN             NaN               NaN   
+3               NaN           NaN             NaN               NaN   
+4               NaN           NaN             NaN               NaN   
+
+   Div1WheelsOff  Div1TailNum  Div2Airport  Div2AirportID Div2AirportSeqID  \
+0            NaN          NaN          NaN            NaN              NaN   
+1            NaN          NaN          NaN            NaN              NaN   
+2            NaN          NaN          NaN            NaN              NaN   
+3            NaN          NaN          NaN            NaN              NaN   
+4            NaN          NaN          NaN            NaN              NaN   
+
+   Div2WheelsOn  Div2TotalGTime  Div2LongestGTime  Div2WheelsOff  Div2TailNum  \
+0           NaN             NaN               NaN            NaN          NaN   
+1           NaN             NaN               NaN            NaN          NaN   
+2           NaN             NaN               NaN            NaN          NaN   
+3           NaN             NaN               NaN            NaN          NaN   
+4           NaN             NaN               NaN            NaN          NaN   
+
+   Div3Airport Div3AirportID Div3AirportSeqID  Div3WheelsOn  Div3TotalGTime  \
+0          NaN           NaN              NaN           NaN             NaN   
+1          NaN           NaN              NaN           NaN             NaN   
+2          NaN           NaN              NaN           NaN             NaN   
+3          NaN           NaN              NaN           NaN             NaN   
+4          NaN           NaN              NaN           NaN             NaN   
+
+   Div3LongestGTime  Div3WheelsOff  Div3TailNum  Div4Airport Div4AirportID  \
+0               NaN            NaN          NaN          NaN           NaN   
+1               NaN            NaN          NaN          NaN           NaN   
+2               NaN            NaN          NaN          NaN           NaN   
+3               NaN            NaN          NaN          NaN           NaN   
+4               NaN            NaN          NaN          NaN           NaN   
+
+   Div4AirportSeqID  Div4WheelsOn  Div4TotalGTime  Div4LongestGTime  \
+0               NaN           NaN             NaN               NaN   
+1               NaN           NaN             NaN               NaN   
+2               NaN           NaN             NaN               NaN   
+3               NaN           NaN             NaN               NaN   
+4               NaN           NaN             NaN               NaN   
+
+   Div4WheelsOff  Div4TailNum  Div5Airport  Div5AirportID  Div5AirportSeqID  \
+0            NaN          NaN          NaN            NaN               NaN   
+1            NaN          NaN          NaN            NaN               NaN   
+2            NaN          NaN          NaN            NaN               NaN   
+3            NaN          NaN          NaN            NaN               NaN   
+4            NaN          NaN          NaN            NaN               NaN   
+
+   Div5WheelsOn  Div5TotalGTime  Div5LongestGTime  Div5WheelsOff  Div5TailNum  \
+0           NaN             NaN               NaN            NaN          NaN   
+1           NaN             NaN               NaN            NaN          NaN   
+2           NaN             NaN               NaN            NaN          NaN   
+3           NaN             NaN               NaN            NaN          NaN   
+4           NaN             NaN               NaN            NaN          NaN   
+
+   Unnamed: 109  
+0           NaN  
+1           NaN  
+2           NaN  
+3           NaN  
+4           NaN  
+
+[5 rows x 110 columns]

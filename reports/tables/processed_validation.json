@@ -1,0 +1,131 @@
+{
+  "validated_at": "2026-10-21T23:50:42.524196+00:00",
+  "passed": true,
+  "rows": 5000,
+  "columns": 21,
+  "checks": [
+    {
+      "check": "required_columns",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "valid_dates",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "required_keys",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "unique_natural_key",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "cancelled_binary",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "diverted_binary",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "scheduled_hhmm",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "distance_positive",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "origin_format",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "destination_format",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "cancelled_without_label",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "operated_with_observed_outcome",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "expected_volume",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "processed_types",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "prediction_cutoff_3h",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "label_matches_business_rule",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "eligibility_matches_label",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "partition_date_consistency",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "monthly_aggregates_match_rows",
+      "passed": true,
+      "violations": 0
+    }
+  ],
+  "cancellations": 164,
+  "eligible_departures": 4836,
+  "delayed_departures": 896,
+  "delay_rate": 0.18527708850289495,
+  "missingness": {
+    "FlightDate": 0,
+    "Reporting_Airline": 0,
+    "Flight_Number_Reporting_Airline": 0,
+    "Tail_Number": 26,
+    "Origin": 0,
+    "Dest": 0,
+    "Distance": 0,
+    "CRSDepTime": 0,
+    "CRSArrTime": 0,
+    "CRSElapsedTime": 0,
+    "DepTime": 161,
+    "ArrTime": 168,
+    "DepDelay": 161,
+    "ArrDelay": 178,
+    "Cancelled": 0,
+    "Diverted": 0,
+    "CarrierDelay": 4087,
+    "WeatherDelay": 4087,
+    "NASDelay": 4087,
+    "SecurityDelay": 4087,
+    "LateAircraftDelay": 4087
+  },
+  "mode": "sample_local"
+}

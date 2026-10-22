@@ -1,0 +1,19 @@
+{
+  "repository_name": "datosmasivos_vuelos",
+  "repository_full_name": "diegogargo/datosmasivos_vuelos",
+  "visibility": "public",
+  "members": {
+    "diego": {
+      "name": "Diego García",
+      "github": "diegogargo"
+    },
+    "jose_miguel": {
+      "name": "Jose Miguel Guevara",
+      "github": "GUEVARA21"
+    },
+    "santiago": {
+      "name": "Santiago Roldán",
+      "github": "Skraeder"
+    }
+  }
+}

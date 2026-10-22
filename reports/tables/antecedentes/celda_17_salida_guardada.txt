@@ -1,0 +1,82 @@
+
+Procesando 2024-01...
+Archivo existente, reutilizando.
+OK: 547,271 vuelos originales | 5,000 seleccionados | 10.7 segundos
+
+Procesando 2024-02...
+Archivo existente, reutilizando.
+OK: 519,221 vuelos originales | 5,000 seleccionados | 10.1 segundos
+
+Procesando 2024-03...
+Archivo existente, reutilizando.
+OK: 591,767 vuelos originales | 5,000 seleccionados | 10.9 segundos
+
+Procesando 2024-04...
+OK: 582,185 vuelos originales | 5,000 seleccionados | 28.1 segundos
+
+Procesando 2024-05...
+OK: 609,743 vuelos originales | 5,000 seleccionados | 27.3 segundos
+
+Procesando 2024-06...
+OK: 611,132 vuelos originales | 5,000 seleccionados | 23.0 segundos
+
+Procesando 2024-07...
+OK: 634,613 vuelos originales | 5,000 seleccionados | 28.6 segundos
+
+Procesando 2024-08...
+OK: 619,025 vuelos originales | 5,000 seleccionados | 35.3 segundos
+
+Procesando 2024-09...
+OK: 582,622 vuelos originales | 5,000 seleccionados | 24.5 segundos
+
+Procesando 2024-10...
+OK: 615,497 vuelos originales | 5,000 seleccionados | 36.6 segundos
+
+Procesando 2024-11...
+OK: 575,404 vuelos originales | 5,000 seleccionados | 27.5 segundos
+
+Procesando 2024-12...
+OK: 590,581 vuelos originales | 5,000 seleccionados | 29.8 segundos
+
+Procesando 2025-01...
+Archivo existente, reutilizando.
+OK: 539,747 vuelos originales | 5,000 seleccionados | 9.8 segundos
+
+Procesando 2025-02...
+OK: 504,884 vuelos originales | 5,000 seleccionados | 19.7 segundos
+
+Procesando 2025-03...
+OK: 600,872 vuelos originales | 5,000 seleccionados | 32.8 segundos
+
+Procesando 2025-04...
+OK: 583,950 vuelos originales | 5,000 seleccionados | 22.3 segundos
+
+Procesando 2025-05...
+OK: 605,648 vuelos originales | 5,000 seleccionados | 29.3 segundos
+
+Procesando 2025-06...
+OK: 611,575 vuelos originales | 5,000 seleccionados | 28.2 segundos
+
+Procesando 2025-07...
+OK: 631,428 vuelos originales | 5,000 seleccionados | 26.8 segundos
+
+Procesando 2025-08...
+OK: 602,378 vuelos originales | 5,000 seleccionados | 25.6 segundos
+
+Procesando 2025-09...
+OK: 562,439 vuelos originales | 5,000 seleccionados | 26.8 segundos
+
+Procesando 2025-10...
+OK: 605,844 vuelos originales | 5,000 seleccionados | 23.4 segundos
+
+Procesando 2025-11...
+OK: 570,550 vuelos originales | 5,000 seleccionados | 26.6 segundos
+
+Procesando 2025-12...
+OK: 582,304 vuelos originales | 5,000 seleccionados | 25.6 segundos
+
+==================================================
+DESCARGA FINALIZADA
+Registros: 120,000
+Meses descargados: 24
+Archivo: /content/proyecto_retrasos/raw/muestra_historica_bts.parquet

@@ -1,0 +1,242 @@
+[
+  {
+    "id": "P1-01",
+    "title": "[P1-01] Validar alcance, arquitectura y organización",
+    "assignee": "diegogargo",
+    "reviewer": "GUEVARA21",
+    "branch": "diego/p1-01",
+    "dependencies": [],
+    "paths": [
+      "README.md",
+      "docs/project_scope.md",
+      "docs/architecture.md"
+    ],
+    "body": "## Responsable y revisión\nResponsable: @diegogargo (Diego García).\nRevisión: @GUEVARA21 (Jose Miguel Guevara).\nParcial: 1. Rama: `diego/p1-01`.\n\n## Criterios de aceptación\n- [ ] Revisar README, project_scope.md y architecture.md contra la rúbrica\n- [ ] Acordar datos disponibles a tres horas y criterios medibles; registrar decisiones del equipo\n- [ ] Dos commits sustantivos y un PR con respuestas a la revisión\n- [ ] PR enlazado con `Closes #NUMERO_REAL` y revisión de otra persona.\n- [ ] Documentación o validación actualizada junto con el trabajo técnico.\n\n## Archivos\n- `README.md`\n- `docs/project_scope.md`\n- `docs/architecture.md`\n\n## Dependencias\nPuede comenzar ahora.\n\n## Evidencia al cerrar\nAdjuntar comandos/resultados y enlaces del PR y de la review. Esta tarea inicia pendiente. La base asistida no sustituye la participación individual.\n",
+    "status": "pending",
+    "issue_number": 1,
+    "issue_url": "https://github.com/diegogargo/datosmasivos_vuelos/issues/1",
+    "assigned_in_github": true
+  },
+  {
+    "id": "P1-02",
+    "title": "[P1-02] Revisar fuente, diccionario y calidad de la muestra",
+    "assignee": "GUEVARA21",
+    "reviewer": "Skraeder",
+    "branch": "jose_miguel/p1-02",
+    "dependencies": [],
+    "paths": [
+      "docs/data_sources.md",
+      "docs/data_dictionary.md",
+      "docs/validation.md"
+    ],
+    "body": "## Responsable y revisión\nResponsable: @GUEVARA21 (Jose Miguel Guevara).\nRevisión: @Skraeder (Santiago Roldán).\nParcial: 1. Rama: `jose_miguel/p1-02`.\n\n## Criterios de aceptación\n- [ ] Ejecutar python -m src.validation.audit_sample y adjuntar salida\n- [ ] Verificar las 21 columnas con BTS: tipos, unidades, nulos estructurales, clave y uso predictivo\n- [ ] Documentar un hallazgo propio con dos commits y PR\n- [ ] PR enlazado con `Closes #NUMERO_REAL` y revisión de otra persona.\n- [ ] Documentación o validación actualizada junto con el trabajo técnico.\n\n## Archivos\n- `docs/data_sources.md`\n- `docs/data_dictionary.md`\n- `docs/validation.md`\n\n## Dependencias\nPuede comenzar ahora.\n\n## Evidencia al cerrar\nAdjuntar comandos/resultados y enlaces del PR y de la review. Esta tarea inicia pendiente. La base asistida no sustituye la participación individual.\n",
+    "status": "pending",
+    "issue_number": 2,
+    "issue_url": "https://github.com/diegogargo/datosmasivos_vuelos/issues/2",
+    "assigned_in_github": false
+  },
+  {
+    "id": "P1-03",
+    "title": "[P1-03] Reproducir y comentar el EDA del equipo",
+    "assignee": "Skraeder",
+    "reviewer": "diegogargo",
+    "branch": "santiago/p1-03",
+    "dependencies": [],
+    "paths": [
+      "notebooks/01_exploration.ipynb",
+      "docs/notebook_audit.md",
+      "reports/figures/"
+    ],
+    "body": "## Responsable y revisión\nResponsable: @Skraeder (Santiago Roldán).\nRevisión: @diegogargo (Diego García).\nParcial: 1. Rama: `santiago/p1-03`.\n\n## Criterios de aceptación\n- [ ] Ejecutar notebooks/01_exploration.ipynb desde un entorno limpio sin editar rutas\n- [ ] Agregar interpretación propia de distribuciones, grupos pequeños y sesgo de muestreo\n- [ ] Distinguir 5000 filas actuales y 120000 históricas no recuperadas; dos commits y PR\n- [ ] PR enlazado con `Closes #NUMERO_REAL` y revisión de otra persona.\n- [ ] Documentación o validación actualizada junto con el trabajo técnico.\n\n## Archivos\n- `notebooks/01_exploration.ipynb`\n- `docs/notebook_audit.md`\n- `reports/figures/`\n\n## Dependencias\nPuede comenzar ahora.\n\n## Evidencia al cerrar\nAdjuntar comandos/resultados y enlaces del PR y de la review. Esta tarea inicia pendiente. La base asistida no sustituye la participación individual.\n",
+    "status": "pending",
+    "issue_number": 3,
+    "issue_url": "https://github.com/diegogargo/datosmasivos_vuelos/issues/3",
+    "assigned_in_github": false
+  },
+  {
+    "id": "P2-01",
+    "title": "[P2-01] Extender ingesta reproducible a los 24 meses",
+    "assignee": "diegogargo",
+    "reviewer": "GUEVARA21",
+    "branch": "diego/p2-01",
+    "dependencies": [
+      "P1-02"
+    ],
+    "paths": [
+      "src/ingestion/",
+      "tests/test_ingestion.py",
+      "docs/data_sources.md"
+    ],
+    "body": "## Responsable y revisión\nResponsable: @diegogargo (Diego García).\nRevisión: @GUEVARA21 (Jose Miguel Guevara).\nParcial: 2. Rama: `diego/p2-01`.\n\n## Criterios de aceptación\n- [ ] Selector explícito 2024-01 a 2025-12; no descargar al importar módulos\n- [ ] ZIP completos separados del muestreo, manifiestos con URL/fecha/SHA256 y uso de memoria controlado\n- [ ] Probar caché, ZIP corrupto y descarga parcial; registrar conteos y volumen reales de los 24 meses\n- [ ] PR enlazado con `Closes #NUMERO_REAL` y revisión de otra persona.\n- [ ] Documentación o validación actualizada junto con el trabajo técnico.\n\n## Archivos\n- `src/ingestion/`\n- `tests/test_ingestion.py`\n- `docs/data_sources.md`\n\n## Dependencias\nP1-02\n\n## Evidencia al cerrar\nAdjuntar comandos/resultados y enlaces del PR y de la review. Esta tarea inicia pendiente. La base asistida no sustituye la participación individual.\n",
+    "status": "pending",
+    "issue_number": 4,
+    "issue_url": "https://github.com/diegogargo/datosmasivos_vuelos/issues/4",
+    "assigned_in_github": true
+  },
+  {
+    "id": "P2-02",
+    "title": "[P2-02] Implementar Silver en PySpark con contrato temporal",
+    "assignee": "GUEVARA21",
+    "reviewer": "Skraeder",
+    "branch": "jose_miguel/p2-02",
+    "dependencies": [
+      "P2-04"
+    ],
+    "paths": [
+      "src/processing/",
+      "notebooks/databricks/",
+      "docs/validation.md"
+    ],
+    "body": "## Responsable y revisión\nResponsable: @GUEVARA21 (Jose Miguel Guevara).\nRevisión: @Skraeder (Santiago Roldán).\nParcial: 2. Rama: `jose_miguel/p2-02`.\n\n## Criterios de aceptación\n- [ ] Declarar esquema y política de duplicados/nulos; mantener cancelados y retrasos negativos\n- [ ] Tratar HHMM=2400 y zonas horarias con dimensión verificable de aeropuertos\n- [ ] Adjuntar ejecución Delta y conteos Bronze/Silver; resultados reales no son predictores\n- [ ] PR enlazado con `Closes #NUMERO_REAL` y revisión de otra persona.\n- [ ] Documentación o validación actualizada junto con el trabajo técnico.\n\n## Archivos\n- `src/processing/`\n- `notebooks/databricks/`\n- `docs/validation.md`\n\n## Dependencias\nP2-04\n\n## Evidencia al cerrar\nAdjuntar comandos/resultados y enlaces del PR y de la review. Esta tarea inicia pendiente. La base asistida no sustituye la participación individual.\n",
+    "status": "pending",
+    "issue_number": 5,
+    "issue_url": "https://github.com/diegogargo/datosmasivos_vuelos/issues/5",
+    "assigned_in_github": false
+  },
+  {
+    "id": "P2-03",
+    "title": "[P2-03] Implementar Gold y agregados trazables",
+    "assignee": "Skraeder",
+    "reviewer": "diegogargo",
+    "branch": "santiago/p2-03",
+    "dependencies": [
+      "P2-02"
+    ],
+    "paths": [
+      "src/processing/",
+      "notebooks/databricks/",
+      "docs/architecture.md"
+    ],
+    "body": "## Responsable y revisión\nResponsable: @Skraeder (Santiago Roldán).\nRevisión: @diegogargo (Diego García).\nParcial: 2. Rama: `santiago/p2-03`.\n\n## Criterios de aceptación\n- [ ] Crear Gold y agregados por mes, aerolínea y aeropuerto; conciliar conteos con Silver elegible\n- [ ] Documentar particiones y regeneración idempotente\n- [ ] Proponer train 2024, validación enero-junio 2025 y prueba julio-diciembre 2025; estimar estacionalidad solo con train\n- [ ] PR enlazado con `Closes #NUMERO_REAL` y revisión de otra persona.\n- [ ] Documentación o validación actualizada junto con el trabajo técnico.\n\n## Archivos\n- `src/processing/`\n- `notebooks/databricks/`\n- `docs/architecture.md`\n\n## Dependencias\nP2-02\n\n## Evidencia al cerrar\nAdjuntar comandos/resultados y enlaces del PR y de la review. Esta tarea inicia pendiente. La base asistida no sustituye la participación individual.\n",
+    "status": "pending",
+    "issue_number": 6,
+    "issue_url": "https://github.com/diegogargo/datosmasivos_vuelos/issues/6",
+    "assigned_in_github": false
+  },
+  {
+    "id": "P2-04",
+    "title": "[P2-04] Crear workspace y ejecutar Bronze en Databricks",
+    "assignee": "diegogargo",
+    "reviewer": "GUEVARA21",
+    "branch": "diego/p2-04",
+    "dependencies": [
+      "P1-01"
+    ],
+    "paths": [
+      "docs/databricks_setup.md",
+      "notebooks/databricks/",
+      "docs/architecture.md"
+    ],
+    "body": "## Responsable y revisión\nResponsable: @diegogargo (Diego García).\nRevisión: @GUEVARA21 (Jose Miguel Guevara).\nParcial: 2. Rama: `diego/p2-04`.\n\n## Criterios de aceptación\n- [ ] Crear workspace y confirmar permisos/cuotas sin compartir credenciales\n- [ ] Registrar ruta real y runtime; cargar CSV descomprimido desde Volume y escribir Bronze Delta\n- [ ] Primera ejecución con un mes, con trazabilidad y evidencia de conteos antes de escalar\n- [ ] PR enlazado con `Closes #NUMERO_REAL` y revisión de otra persona.\n- [ ] Documentación o validación actualizada junto con el trabajo técnico.\n\n## Archivos\n- `docs/databricks_setup.md`\n- `notebooks/databricks/`\n- `docs/architecture.md`\n\n## Dependencias\nP1-01\n\n## Evidencia al cerrar\nAdjuntar comandos/resultados y enlaces del PR y de la review. Esta tarea inicia pendiente. La base asistida no sustituye la participación individual.\n",
+    "status": "pending",
+    "issue_number": 7,
+    "issue_url": "https://github.com/diegogargo/datosmasivos_vuelos/issues/7",
+    "assigned_in_github": true
+  },
+  {
+    "id": "P2-05",
+    "title": "[P2-05] Diseñar tasas históricas sin fuga de información",
+    "assignee": "GUEVARA21",
+    "reviewer": "Skraeder",
+    "branch": "jose_miguel/p2-05",
+    "dependencies": [
+      "P2-02"
+    ],
+    "paths": [
+      "src/processing/",
+      "tests/",
+      "docs/decisions.md"
+    ],
+    "body": "## Responsable y revisión\nResponsable: @GUEVARA21 (Jose Miguel Guevara).\nRevisión: @Skraeder (Santiago Roldán).\nParcial: 2. Rama: `jose_miguel/p2-05`.\n\n## Criterios de aceptación\n- [ ] Definir origin_hour_delay_rate_28d y airline_delay_rate_28d con event_time, available_at y cutoff\n- [ ] Probar exclusión del propio vuelo, eventos futuros y publicaciones tardías; BTS mensual no equivale a disponibilidad en vivo\n- [ ] Si falta available_at verificable, declarar supuesto retrospectivo ideal; no afirmar despliegue real a 3 h\n- [ ] Verificar clima a 3 h mediante fecha de emisión, sin usar observaciones futuras\n- [ ] PR enlazado con `Closes #NUMERO_REAL` y revisión de otra persona.\n- [ ] Documentación o validación actualizada junto con el trabajo técnico.\n\n## Archivos\n- `src/processing/`\n- `tests/`\n- `docs/decisions.md`\n\n## Dependencias\nP2-02\n\n## Evidencia al cerrar\nAdjuntar comandos/resultados y enlaces del PR y de la review. Esta tarea inicia pendiente. La base asistida no sustituye la participación individual.\n",
+    "status": "pending",
+    "issue_number": 8,
+    "issue_url": "https://github.com/diegogargo/datosmasivos_vuelos/issues/8",
+    "assigned_in_github": false
+  },
+  {
+    "id": "P2-06",
+    "title": "[P2-06] Validar el modelo preliminar solicitado por el profesor",
+    "assignee": "Skraeder",
+    "reviewer": "diegogargo",
+    "branch": "santiago/p2-06",
+    "dependencies": [
+      "P2-03",
+      "P2-05"
+    ],
+    "paths": [
+      "src/analysis/",
+      "notebooks/",
+      "docs/decisions.md"
+    ],
+    "body": "## Responsable y revisión\nResponsable: @Skraeder (Santiago Roldán).\nRevisión: @diegogargo (Diego García).\nParcial: 2. Rama: `santiago/p2-06`.\n\n## Criterios de aceptación\n- [ ] Confirmar definición del entregable adicional con el profesor y dejarla documentada\n- [ ] Comparar baseline constante y modelo mediante ROC-AUC, PR-AUC y matriz de confusión con división temporal\n- [ ] Registrar features, semillas y tamaños; el experimento antiguo a 24 h no valida el modelo a 3 h\n- [ ] Si se ajustan exponencial/gamma/lognormal, usar positivos y explicar exclusiones; no sustituye al clasificador\n- [ ] PR enlazado con `Closes #NUMERO_REAL` y revisión de otra persona.\n- [ ] Documentación o validación actualizada junto con el trabajo técnico.\n\n## Archivos\n- `src/analysis/`\n- `notebooks/`\n- `docs/decisions.md`\n\n## Dependencias\nP2-03, P2-05\n\n## Evidencia al cerrar\nAdjuntar comandos/resultados y enlaces del PR y de la review. Esta tarea inicia pendiente. La base asistida no sustituye la participación individual.\n",
+    "status": "pending",
+    "issue_number": 9,
+    "issue_url": "https://github.com/diegogargo/datosmasivos_vuelos/issues/9",
+    "assigned_in_github": false
+  },
+  {
+    "id": "P2-07",
+    "title": "[P2-07] Integrar CI, benchmark y reproducción del segundo parcial",
+    "assignee": "diegogargo",
+    "reviewer": "GUEVARA21",
+    "branch": "diego/p2-07",
+    "dependencies": [
+      "P2-01",
+      "P2-03"
+    ],
+    "paths": [
+      ".github/workflows/ci.yml",
+      "src/analysis/benchmark.py",
+      "docs/benchmark.md"
+    ],
+    "body": "## Responsable y revisión\nResponsable: @diegogargo (Diego García).\nRevisión: @GUEVARA21 (Jose Miguel Guevara).\nParcial: 2. Rama: `diego/p2-07`.\n\n## Criterios de aceptación\n- [ ] CI verde del commit integrado y ejecución desde clon limpio\n- [ ] Benchmark en muestra y tamaño mayor con igualdad de resultados, versiones, tiempos y medida de memoria definida\n- [ ] Documentar integración real de PR y resolución de comentarios o conflictos si existen; no fabricar conflictos\n- [ ] PR enlazado con `Closes #NUMERO_REAL` y revisión de otra persona.\n- [ ] Documentación o validación actualizada junto con el trabajo técnico.\n\n## Archivos\n- `.github/workflows/ci.yml`\n- `src/analysis/benchmark.py`\n- `docs/benchmark.md`\n\n## Dependencias\nP2-01, P2-03\n\n## Evidencia al cerrar\nAdjuntar comandos/resultados y enlaces del PR y de la review. Esta tarea inicia pendiente. La base asistida no sustituye la participación individual.\n",
+    "status": "pending",
+    "issue_number": 10,
+    "issue_url": "https://github.com/diegogargo/datosmasivos_vuelos/issues/10",
+    "assigned_in_github": true
+  },
+  {
+    "id": "P2-08",
+    "title": "[P2-08] Validar capas completas y ampliar pruebas de calidad",
+    "assignee": "GUEVARA21",
+    "reviewer": "Skraeder",
+    "branch": "jose_miguel/p2-08",
+    "dependencies": [
+      "P2-02",
+      "P2-03",
+      "P2-05"
+    ],
+    "paths": [
+      "src/validation/",
+      "tests/",
+      "docs/validation.md"
+    ],
+    "body": "## Responsable y revisión\nResponsable: @GUEVARA21 (Jose Miguel Guevara).\nRevisión: @Skraeder (Santiago Roldán).\nParcial: 2. Rama: `jose_miguel/p2-08`.\n\n## Criterios de aceptación\n- [ ] Validar esquema, tipos, nulos, duplicados, rangos, tiempo, consistencia entre tablas y conteos por mes\n- [ ] Inyectar errores y demostrar fallos del job; cero cancelados etiquetados como puntuales o eventos futuros en ventanas\n- [ ] Conservar reportes de las tres capas y explicar cuarentena/rechazos\n- [ ] PR enlazado con `Closes #NUMERO_REAL` y revisión de otra persona.\n- [ ] Documentación o validación actualizada junto con el trabajo técnico.\n\n## Archivos\n- `src/validation/`\n- `tests/`\n- `docs/validation.md`\n\n## Dependencias\nP2-02, P2-03, P2-05\n\n## Evidencia al cerrar\nAdjuntar comandos/resultados y enlaces del PR y de la review. Esta tarea inicia pendiente. La base asistida no sustituye la participación individual.\n",
+    "status": "pending",
+    "issue_number": 11,
+    "issue_url": "https://github.com/diegogargo/datosmasivos_vuelos/issues/11",
+    "assigned_in_github": false
+  },
+  {
+    "id": "P2-09",
+    "title": "[P2-09] Actualizar EDA y evidencias desde Gold",
+    "assignee": "Skraeder",
+    "reviewer": "diegogargo",
+    "branch": "santiago/p2-09",
+    "dependencies": [
+      "P2-03",
+      "P2-08"
+    ],
+    "paths": [
+      "notebooks/",
+      "reports/",
+      "docs/rubric_checklist.md",
+      "docs/collaboration_log.md"
+    ],
+    "body": "## Responsable y revisión\nResponsable: @Skraeder (Santiago Roldán).\nRevisión: @diegogargo (Diego García).\nParcial: 2. Rama: `santiago/p2-09`.\n\n## Criterios de aceptación\n- [ ] Gráficas y tablas desde Gold citan ejecución/dataset y denominadores\n- [ ] Actualizar checklist con enlaces reales a PR, reviews y jobs\n- [ ] Confirmar aporte técnico y documental por integrante; no preparar todavía informe ni presentación final\n- [ ] PR enlazado con `Closes #NUMERO_REAL` y revisión de otra persona.\n- [ ] Documentación o validación actualizada junto con el trabajo técnico.\n\n## Archivos\n- `notebooks/`\n- `reports/`\n- `docs/rubric_checklist.md`\n- `docs/collaboration_log.md`\n\n## Dependencias\nP2-03, P2-08\n\n## Evidencia al cerrar\nAdjuntar comandos/resultados y enlaces del PR y de la review. Esta tarea inicia pendiente. La base asistida no sustituye la participación individual.\n",
+    "status": "pending",
+    "issue_number": 12,
+    "issue_url": "https://github.com/diegogargo/datosmasivos_vuelos/issues/12",
+    "assigned_in_github": false
+  }
+]

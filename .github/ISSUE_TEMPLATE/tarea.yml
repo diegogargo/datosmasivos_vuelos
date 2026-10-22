@@ -1,0 +1,25 @@
+name: Tarea del proyecto
+description: Trabajo técnico o documental verificable
+title: "[TAREA] "
+body:
+  - type: textarea
+    id: objetivo
+    attributes:
+      label: Objetivo
+    validations:
+      required: true
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Criterios de aceptación
+      description: Qué debe comprobarse para cerrar la tarea.
+    validations:
+      required: true
+  - type: input
+    id: responsable
+    attributes:
+      label: Responsable y revisor
+  - type: textarea
+    id: evidencia
+    attributes:
+      label: Evidencia de verificación

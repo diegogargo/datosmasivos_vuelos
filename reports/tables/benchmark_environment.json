@@ -1,0 +1,13 @@
+{
+  "executed_at": "2026-10-21T23:50:44.409442+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.13.15",
+  "pandas": "3.0.6",
+  "pyarrow": "26.0.0",
+  "repeats": 5,
+  "warmup_per_format": 1,
+  "cache": "SO caliente; no se vació caché",
+  "operation": "lectura completa de 5000 filas x 21 columnas + filtro operados + conteo retraso >=15",
+  "memory": "DataFrame.memory_usage(deep=True); no pico de memoria ni cómputo distribuido",
+  "limits": "Muestra local; no extrapolar a 24 meses o Databricks"
+}

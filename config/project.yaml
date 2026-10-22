@@ -1,0 +1,25 @@
+project_name: datosmasivos_vuelos
+team:
+  - Diego García
+  - Jose Miguel Guevara
+  - Santiago Roldán
+period:
+  start: '2024-01'
+  end: '2025-12'
+prediction_horizon_hours: 3
+delay_threshold_minutes: 15
+sample:
+  period: '2025-01'
+  rows: 5000
+  seed: 42
+platform:
+  target: Databricks
+  engine: PySpark
+  format: Delta
+  workspace_status: not_created
+  layers: [bronze, silver, gold]
+features_proposed:
+  - is_peak_delay_season
+  - origin_hour_delay_rate_28d
+  - airline_delay_rate_28d
+weather_3h_status: not_verified

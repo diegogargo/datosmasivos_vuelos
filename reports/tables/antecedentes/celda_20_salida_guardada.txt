@@ -1,0 +1,17 @@
+<Figure size 1500x500 with 2 Axes>
+RESUMEN ESTADÍSTICO
+---------------------------------------------
+Vuelos analizados: 118,273
+Retrasos positivos: 44,413
+Media: 13.24 minutos
+Mediana: -2.00 minutos
+Desviación estándar: 59.61
+
+PERCENTILES DE RETRASOS POSITIVOS
+
+      Minutos
+0.50    18.00
+0.75    48.00
+0.90   105.00
+0.95   161.00
+0.99   365.88
