@@ -4,7 +4,7 @@ team:
   - Jose Miguel Guevara
   - Santiago Rold�n
 period:
-  start: '2022-01'
+  start: '2024-01'
   end: '2025-12'
 prediction_horizon_hours: 3
 delay_threshold_minutes: 15

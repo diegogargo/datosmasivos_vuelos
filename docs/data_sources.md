@@ -8,7 +8,7 @@ Formato de origen: ZIP con un CSV. El mes regenerado de enero 2025 tiene 539,747
 Frecuencia: publicaci�n hist�rica mensual, susceptible a revisiones. La fecha del vuelo no es su fecha de disponibilidad p�blica. Uso: datos p�blicos para an�lisis acad�mico; citar BTS, revisar avisos de uso de la fuente y no presentar el an�lisis como producto oficial del organismo. No se incluye una licencia de terceros ni se atribuye una licencia inventada a los datos.
 
 ## Periodo y volumen
-Alcance aprobado para el pipeline: **2022�2025, 48 meses completos, sin muestreo**. El EDA original conserva 2024�2025, 24 meses. Los conteos originales conservados en la celda 17 del notebook suman **14,080,680 filas**: 7,079,061 en 2024 y 7,001,619 en 2025. Son conteos de una ejecuci�n hist�rica guardada de dos a�os, no el total del nuevo alcance de cuatro a�os.
+Alcance aprobado para el pipeline: **2022�2025, 24 meses completos, sin muestreo**. El EDA original conserva 2024�2025, 24 meses. Los conteos originales conservados en la celda 17 del notebook suman **14,080,680 filas**: 7,079,061 en 2024 y 7,001,619 en 2025. Son conteos de una ejecuci�n hist�rica guardada de dos a�os, no el total del nuevo alcance de cuatro a�os.
 
 El notebook guarda una muestra de 5,000 filas por mes, 120,000 en total. Su Parquet hist�rico no fue entregado. Esta base conserva esas salidas y solo volvi� a descargar enero 2025 para producir una muestra evaluable. Las 120,000 filas no equivalen a los 14.08 millones de vuelos originales.
 

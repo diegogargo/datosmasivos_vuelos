@@ -19,9 +19,9 @@ Un segmento de vuelo programado reportado por una aerol�nea a BTS en una fecha
 La etiqueta es `DepDelay >=15` cuando `Cancelled ==0` y `DepDelay` est� observado. Se conservan retrasos negativos. Cancelados permanecen en la capa limpia con etiqueta nula, incluso si reportan `DepDelay`.
 
 ## Alcance temporal
-Pipeline: enero 2022�diciembre 2025, 48 meses completos de Reporting Carrier de BTS. El equipo eligi� cuatro a�os. El EDA inicial mantiene su periodo 2024�2025 y 5,000 filas por mes; no representa autom�ticamente el hist�rico ampliado. La muestra reproducible incluida tiene 5,000 filas de enero 2025. Los resultados hist�ricos de 120,000 filas siguen identificados como antecedentes.
+Pipeline: enero 2024�diciembre 2025, 24 meses completos de Reporting Carrier de BTS. El equipo eligi� cuatro a�os. El EDA inicial mantiene su periodo 2024�2025 y 5,000 filas por mes; no representa autom�ticamente el hist�rico ampliado. La muestra reproducible incluida tiene 5,000 filas de enero 2025. Los resultados hist�ricos de 120,000 filas siguen identificados como antecedentes.
 
-La cantidad real descargada de los 48 meses se documentar� mediante manifiestos y conteos nuevos. Los 14,080,680 registros guardados en el notebook corresponden �nicamente a 2024�2025. No son el total de los cuatro a�os.
+La cantidad real descargada de los 24 meses se documentar� mediante manifiestos y conteos nuevos. Los 14,080,680 registros guardados en el notebook corresponden �nicamente a 2024�2025. No son el total de los cuatro a�os.
 
 `python -m src.ingestion.validate_provenance` comprueba hashes, filas, columnas, periodo y equivalencia ordenada CSV/Parquet de la muestra, con nulos iguales y tolerancias num�ricas rtol=1e-12 y atol=1e-9. El reporte distingue integridad de muestra de una nueva auditor�a del ZIP original.
 
