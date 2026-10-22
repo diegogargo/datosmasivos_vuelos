@@ -1,0 +1,68 @@
+{
+  "tests": {
+    "passed": 9,
+    "seconds": 40.57,
+    "decimal_flag_regression": "Reproduced original failure; corrected case passed"
+  },
+  "scope": "Real Spark/Delta execution over all Bronze rows",
+  "prepared_at": "2026-10-22T10:24:13.729540+00:00",
+  "ai_assistance": "Codex",
+  "original_notebook_sha256": "242eb31ac2994ba10a9ccb3f3a4d6390e661728c87e7774d4f0d7e1fbb8ff358",
+  "baseline_diego": "6c4668e6d9ac3d7f72a1c241f664d279b3a3047d",
+  "regression_tests": {
+    "passed": 82,
+    "seconds": 2.29
+  },
+  "databricks_execution": "24 months complete and reconciled",
+  "human_review": "Pending Skraeder",
+  "code_sha256": {
+    ".gitattributes": "1c5a7aa9fb1bcd579cd16ea49a80c954c2bc24cf03ea9e90d322b535d973ab55",
+    ".github/workflows/spark.yml": "95bb5398812f36e3cab8784e755e0ece6dd37a9cf91f2b07d986d857d3bcd3b0",
+    "requirements-spark.txt": "f2993bfed7c5d3cb62b54b7511eda2ccbeb7b849d8ec2ba7f99c3b4c82895c38",
+    "src/processing/delta_io.py": "0eea9e0829e8d5b6fa4894f7ca3fea856350358c4b8e06cc5f5458623bac7be8",
+    "src/processing/temporal.py": "36858c1c894ac4d58e4d7df0ed39d6b961fc5ba52b99959edc040670fc990328",
+    "src/processing/silver.py": "997a3a0695b3e6a066779af1731733805d43d0c7590e6ef3f4dcdc1c1a2299dd",
+    "notebooks/databricks/02_silver.py": "c5b8081aea17134496a61d091ebea4914fa6dc410fbf397047f936b96f2aec35",
+    "scripts/run_silver_databricks.py": "a6415da4cf36201696a13194215e23c9af72dbc2df64a2e5e8d21b1a509bf4a1",
+    "tests/test_silver.py": "580bceeb605707649aaac9faa836a6704dd25bd515c91df6b4c4c51785c359b1",
+    "data/reference/airport_timezones.csv": "67412696ead340ca0a69c35974f7f034e6f46038093d33d5f4667d7b038417fc",
+    "data/reference/airport_timezones.provenance.json": "4c2441d0eee5058ceaf6f77a4be2ecb474a0304158b3c08109f00008a0fcb3ef",
+    "data/reference/AIRPORTSDATA_LICENSE.txt": "1ab6bf365e1f6a1883ab6a2f797e761b221081b52a33273d86c157fd562106be"
+  },
+  "code_hash_scope": "Git committed file bytes",
+  "runtime_report": "reports/tables/databricks_silver_result.json",
+  "source_rows": 14080680,
+  "silver_rows": 14080669,
+  "quarantine_rows": 11,
+  "repeated_january": {
+    "pilot_rows": 539747,
+    "full_range_rows": 539747,
+    "pilot_delta_version": 1,
+    "full_range_delta_version": 38,
+    "scope": "Volume comparison; corrected flag/label quality independently checked against CSV"
+  },
+  "assembled_local_suite": {
+    "passed": 105,
+    "pytest_seconds": 391.05,
+    "process_exit_code": 0,
+    "python_version": "3.13.15",
+    "pyspark_version": "4.2.0",
+    "source_sha256": {
+      "src/processing/silver.py": "997a3a0695b3e6a066779af1731733805d43d0c7590e6ef3f4dcdc1c1a2299dd",
+      "src/processing/historical_features.py": "5aa962d27945c02b5b573736c8a5a6958e5aeff4ff734faa5b51ca2d84ab74ab",
+      "src/validation/validate_layers.py": "d0b9c5259deb85be7c21b1fa49a34eb705e655be0bbf0dfa682a42e9530d6c8b"
+    },
+    "validated_at": "2026-10-22T10:04:42.592816+00:00",
+    "scope": "Assembled local workspace containing all three Jose P2 modules and Diego baseline; individual stacked PRs contain subsets",
+    "synthetic_data": "Spark tests include synthetic Gold contracts; this is not a real Gold execution"
+  },
+  "local_qa_status": "105 passed on corrected sources; remote execution pending",
+  "complete_local_suite": {
+    "passed": 105,
+    "seconds": 392.25117780000437,
+    "scope": "Assembled workspace with all three tasks; individual PRs contain subsets"
+  },
+  "quality_summary_passed": true,
+  "january_reference_passed": true,
+  "flag_parsing_regression": "Raw BTS 0.00/1.00 reproduced failure; corrected numeric conversion and post-cast checks passed"
+}

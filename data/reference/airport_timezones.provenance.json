@@ -1,0 +1,12 @@
+{
+  "source": "https://raw.githubusercontent.com/mborsetti/airportsdata/47ae282a8491758e6dafe28d4139539e561b54d5/airportsdata/airports.csv",
+  "commit": "47ae282a8491758e6dafe28d4139539e561b54d5",
+  "source_sha256": "516c57d9d999f7a3be28ca649d2badbe3b972f07e57dc6173ab973b72d51cf52",
+  "artifact_sha256": "67412696ead340ca0a69c35974f7f034e6f46038093d33d5f4667d7b038417fc",
+  "rows": 7884,
+  "excluded_ambiguous_iata": [],
+  "transformation": "IATA no vacío, TZ no vacía, una zona distinta por IATA; dimensión actual, sin inventar correspondencia histórica BTS.",
+  "limitations": "La fuente de aeropuertos es comunitaria y actual; no certifica por sí sola todos los cambios de código 2024–2025. Silver reporta cobertura y conserva IDs BTS.",
+  "artifact_encoding": "UTF-8",
+  "artifact_line_endings": "LF"
+}

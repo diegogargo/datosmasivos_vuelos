@@ -1,0 +1,554 @@
+{
+  "layer": "silver",
+  "run_id": "fe76dd21c69f44f888e4f4b1533bbf20",
+  "start": "2024-01",
+  "end": "2025-12",
+  "started_at": "2026-10-22T09:56:36.638294+00:00",
+  "complete": true,
+  "months": [
+    {
+      "period": "2024-01",
+      "source_rows": 547271,
+      "silver_rows": 547271,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 547271,
+        "labelled_departures": 526882,
+        "eligible_departures": 526882,
+        "cancelled_rows": 20389,
+        "delayed_departures": 121939,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 26,
+      "quarantine_delta_version": 26
+    },
+    {
+      "period": "2024-02",
+      "source_rows": 519221,
+      "silver_rows": 519221,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 519221,
+        "labelled_departures": 516219,
+        "eligible_departures": 516219,
+        "cancelled_rows": 3002,
+        "delayed_departures": 79987,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 27,
+      "quarantine_delta_version": 27
+    },
+    {
+      "period": "2024-03",
+      "source_rows": 591767,
+      "silver_rows": 591767,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 591767,
+        "labelled_departures": 586647,
+        "eligible_departures": 586647,
+        "cancelled_rows": 5120,
+        "delayed_departures": 122198,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 28,
+      "quarantine_delta_version": 28
+    },
+    {
+      "period": "2024-04",
+      "source_rows": 582185,
+      "silver_rows": 582185,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 582185,
+        "labelled_departures": 578150,
+        "eligible_departures": 578150,
+        "cancelled_rows": 4035,
+        "delayed_departures": 109219,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 29,
+      "quarantine_delta_version": 29
+    },
+    {
+      "period": "2024-05",
+      "source_rows": 609743,
+      "silver_rows": 609743,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 609743,
+        "labelled_departures": 601499,
+        "eligible_departures": 601499,
+        "cancelled_rows": 8244,
+        "delayed_departures": 154248,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 30,
+      "quarantine_delta_version": 30
+    },
+    {
+      "period": "2024-06",
+      "source_rows": 611132,
+      "silver_rows": 611132,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 611132,
+        "labelled_departures": 603256,
+        "eligible_departures": 603256,
+        "cancelled_rows": 7876,
+        "delayed_departures": 152654,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 31,
+      "quarantine_delta_version": 31
+    },
+    {
+      "period": "2024-07",
+      "source_rows": 634613,
+      "silver_rows": 634613,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 634613,
+        "labelled_departures": 616241,
+        "eligible_departures": 616241,
+        "cancelled_rows": 18372,
+        "delayed_departures": 181716,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 32,
+      "quarantine_delta_version": 32
+    },
+    {
+      "period": "2024-08",
+      "source_rows": 619025,
+      "silver_rows": 619024,
+      "quarantine_rows": 1,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {
+        "positive_integer_Flight_Number_Reporting_Airline": 1,
+        "null_after_conversion_Flight_Number_Reporting_Airline": 1
+      },
+      "quality_summary": {
+        "silver_rows": 619024,
+        "labelled_departures": 606310,
+        "eligible_departures": 606310,
+        "cancelled_rows": 12714,
+        "delayed_departures": 139628,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 33,
+      "quarantine_delta_version": 33
+    },
+    {
+      "period": "2024-09",
+      "source_rows": 582622,
+      "silver_rows": 582622,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 582622,
+        "labelled_departures": 579123,
+        "eligible_departures": 579123,
+        "cancelled_rows": 3499,
+        "delayed_departures": 87286,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 34,
+      "quarantine_delta_version": 34
+    },
+    {
+      "period": "2024-10",
+      "source_rows": 615497,
+      "silver_rows": 615497,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 615497,
+        "labelled_departures": 609213,
+        "eligible_departures": 609213,
+        "cancelled_rows": 6284,
+        "delayed_departures": 82864,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 35,
+      "quarantine_delta_version": 35
+    },
+    {
+      "period": "2024-11",
+      "source_rows": 575404,
+      "silver_rows": 575398,
+      "quarantine_rows": 6,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {
+        "ambiguous_local_time_DST": 6
+      },
+      "quality_summary": {
+        "silver_rows": 575398,
+        "labelled_departures": 572769,
+        "eligible_departures": 572769,
+        "cancelled_rows": 2629,
+        "delayed_departures": 82519,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 36,
+      "quarantine_delta_version": 36
+    },
+    {
+      "period": "2024-12",
+      "source_rows": 590581,
+      "silver_rows": 590581,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 590581,
+        "labelled_departures": 586430,
+        "eligible_departures": 586430,
+        "cancelled_rows": 4151,
+        "delayed_departures": 126874,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 37,
+      "quarantine_delta_version": 37
+    },
+    {
+      "period": "2025-01",
+      "source_rows": 539747,
+      "silver_rows": 539747,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 539747,
+        "labelled_departures": 523435,
+        "eligible_departures": 523435,
+        "cancelled_rows": 16312,
+        "delayed_departures": 95432,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 38,
+      "quarantine_delta_version": 38
+    },
+    {
+      "period": "2025-02",
+      "source_rows": 504884,
+      "silver_rows": 504884,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 504884,
+        "labelled_departures": 497479,
+        "eligible_departures": 497479,
+        "cancelled_rows": 7405,
+        "delayed_departures": 97670,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 39,
+      "quarantine_delta_version": 39
+    },
+    {
+      "period": "2025-03",
+      "source_rows": 600872,
+      "silver_rows": 600872,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 600872,
+        "labelled_departures": 593949,
+        "eligible_departures": 593949,
+        "cancelled_rows": 6923,
+        "delayed_departures": 113772,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 40,
+      "quarantine_delta_version": 40
+    },
+    {
+      "period": "2025-04",
+      "source_rows": 583950,
+      "silver_rows": 583950,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 583950,
+        "labelled_departures": 579036,
+        "eligible_departures": 579036,
+        "cancelled_rows": 4914,
+        "delayed_departures": 108308,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 41,
+      "quarantine_delta_version": 41
+    },
+    {
+      "period": "2025-05",
+      "source_rows": 605648,
+      "silver_rows": 605648,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 605648,
+        "labelled_departures": 599304,
+        "eligible_departures": 599304,
+        "cancelled_rows": 6344,
+        "delayed_departures": 134810,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 42,
+      "quarantine_delta_version": 42
+    },
+    {
+      "period": "2025-06",
+      "source_rows": 611575,
+      "silver_rows": 611575,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 611575,
+        "labelled_departures": 601839,
+        "eligible_departures": 601839,
+        "cancelled_rows": 9736,
+        "delayed_departures": 165116,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 43,
+      "quarantine_delta_version": 43
+    },
+    {
+      "period": "2025-07",
+      "source_rows": 631428,
+      "silver_rows": 631428,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 631428,
+        "labelled_departures": 615955,
+        "eligible_departures": 615955,
+        "cancelled_rows": 15473,
+        "delayed_departures": 175907,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 44,
+      "quarantine_delta_version": 44
+    },
+    {
+      "period": "2025-08",
+      "source_rows": 602378,
+      "silver_rows": 602378,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 602378,
+        "labelled_departures": 595895,
+        "eligible_departures": 595895,
+        "cancelled_rows": 6483,
+        "delayed_departures": 133098,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 45,
+      "quarantine_delta_version": 45
+    },
+    {
+      "period": "2025-09",
+      "source_rows": 562439,
+      "silver_rows": 562439,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 562439,
+        "labelled_departures": 559553,
+        "eligible_departures": 559553,
+        "cancelled_rows": 2886,
+        "delayed_departures": 92269,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 46,
+      "quarantine_delta_version": 46
+    },
+    {
+      "period": "2025-10",
+      "source_rows": 605844,
+      "silver_rows": 605844,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 605844,
+        "labelled_departures": 602640,
+        "eligible_departures": 602640,
+        "cancelled_rows": 3204,
+        "delayed_departures": 118073,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 47,
+      "quarantine_delta_version": 47
+    },
+    {
+      "period": "2025-11",
+      "source_rows": 570550,
+      "silver_rows": 570546,
+      "quarantine_rows": 4,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {
+        "ambiguous_local_time_DST": 4
+      },
+      "quality_summary": {
+        "silver_rows": 570546,
+        "labelled_departures": 556351,
+        "eligible_departures": 556351,
+        "cancelled_rows": 14195,
+        "delayed_departures": 110692,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 48,
+      "quarantine_delta_version": 48
+    },
+    {
+      "period": "2025-12",
+      "source_rows": 582304,
+      "silver_rows": 582304,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "quality_summary": {
+        "silver_rows": 582304,
+        "labelled_departures": 573303,
+        "eligible_departures": 573303,
+        "cancelled_rows": 9001,
+        "delayed_departures": 154008,
+        "null_required_typed_rows": 0,
+        "invalid_label_rows": 0,
+        "quality_passed": true
+      },
+      "silver_delta_version": 49,
+      "quarantine_delta_version": 49
+    }
+  ],
+  "quality_summary_passed": true,
+  "spark_version": "4.2.0",
+  "timezone_dimension": {
+    "source": "https://raw.githubusercontent.com/mborsetti/airportsdata/47ae282a8491758e6dafe28d4139539e561b54d5/airportsdata/airports.csv",
+    "commit": "47ae282a8491758e6dafe28d4139539e561b54d5",
+    "source_sha256": "516c57d9d999f7a3be28ca649d2badbe3b972f07e57dc6173ab973b72d51cf52",
+    "artifact_sha256": "67412696ead340ca0a69c35974f7f034e6f46038093d33d5f4667d7b038417fc",
+    "rows": 7884,
+    "excluded_ambiguous_iata": [],
+    "transformation": "IATA no vacío, TZ no vacía, una zona distinta por IATA; dimensión actual, sin inventar correspondencia histórica BTS.",
+    "limitations": "La fuente de aeropuertos es comunitaria y actual; no certifica por sí sola todos los cambios de código 2024–2025. Silver reporta cobertura y conserva IDs BTS.",
+    "artifact_encoding": "UTF-8",
+    "artifact_line_endings": "LF"
+  },
+  "source_delta_version": 25,
+  "policies": {
+    "exact_duplicates": "Sobre todos los campos originales; exclusiones contadas.",
+    "conflicting_keys": "Todas las filas contradictorias se envían a cuarentena.",
+    "DST": "Horas inexistentes o ambiguas se envían a cuarentena; ámbito US/territorios 2024–2025.",
+    "timezone_mapping": "Dimensión actual comunitaria, sin certificación histórica de cada código IATA. IDs BTS preservados."
+  },
+  "staging_table": "workspace.silver.vuelos_stage_fe76dd21c69f44f888e4f4b1533bbf20",
+  "finished_at": "2026-10-22T10:11:38.006807+00:00",
+  "rows": 14080669,
+  "quarantine_rows": 11,
+  "staging_removed": true,
+  "local_code_sha256": {
+    "src/__init__.py": "be68e600ad32f96327b5fea7645e6b680b35157d476045b1cce4c9966fdb220b",
+    "src/analysis/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/analysis/benchmark.py": "af6068074fac8ed0ceee73aba56659d9041d574d808ef992ec19bcc2a8ef5176",
+    "src/analysis/benchmark_scale.py": "cdf53ea2478564cb57b2dbe3568835e3b208d35afb3eb13c1683a98573696c59",
+    "src/ingestion/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/ingestion/acquire_range.py": "d1146e7c018ee3cdf1adfda019a67932e3f99b9f8e7460e41e40d1154e0b32ae",
+    "src/ingestion/bronze.py": "398a6cabd851e3fc439c9a0869f9f655689250e6c89724658fb34160cd8cfd30",
+    "src/ingestion/bts.py": "46101717ac19b93f1918a01860be4db5f702494b83489de4067ae917b182eb80",
+    "src/ingestion/validate_provenance.py": "e64cd2ac00657a407d28742cc670502b334d53c02bf3a0c8ebbe06c14783cfae",
+    "src/processing/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/processing/build_dataset.py": "56e6d4ab1058667c992c2bd43ea0a1aeabd60b99c02ff81a9e44be90502319ae",
+    "src/processing/contracts.py": "c5981ff73505ba1d89dd0c0f8468bd8e58ecc4f0263eb3189104d429d8514774",
+    "src/processing/delta_io.py": "0eea9e0829e8d5b6fa4894f7ca3fea856350358c4b8e06cc5f5458623bac7be8",
+    "src/processing/historical_features.py": "5aa962d27945c02b5b573736c8a5a6958e5aeff4ff734faa5b51ca2d84ab74ab",
+    "src/processing/silver.py": "997a3a0695b3e6a066779af1731733805d43d0c7590e6ef3f4dcdc1c1a2299dd",
+    "src/processing/temporal.py": "36858c1c894ac4d58e4d7df0ed39d6b961fc5ba52b99959edc040670fc990328",
+    "src/utils/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/utils/common.py": "8a71af68debf036f36717fadd55001fa8fb67610cccb10c2307beb6cb059432f",
+    "src/validation/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/validation/audit_sample.py": "99e9c620729a99a742f38e16fd046dd59621f88cf7df94c9200acd1910efbb36",
+    "src/validation/validate_acquisition.py": "4e6da88ac49d50ebaaf7d6fcd0e2517d4279100e9e3ecdde450a8b1a61936d97",
+    "src/validation/validate_dataset.py": "61c14b3de78c3320731a6ad48a3636fcb8f3c1567b94c17459227300e4c64bfa",
+    "src/validation/validate_layers.py": "d0b9c5259deb85be7c21b1fa49a34eb705e655be0bbf0dfa682a42e9530d6c8b",
+    "data/reference/airport_timezones.csv": "67412696ead340ca0a69c35974f7f034e6f46038093d33d5f4667d7b038417fc",
+    "data/reference/airport_timezones.provenance.json": "2c76fc936d93f6395017462079df27efb7d13fdcdf68fb5a34017972825cd6ed",
+    "data/reference/AIRPORTSDATA_LICENSE.txt": "1ab6bf365e1f6a1883ab6a2f797e761b221081b52a33273d86c157fd562106be",
+    "notebooks/databricks/02_silver.py": "c5b8081aea17134496a61d091ebea4914fa6dc410fbf397047f936b96f2aec35"
+  },
+  "execution_role": "Código de Jose Miguel asistido por Codex; workspace de integración de Diego.",
+  "january_reference_passed": true
+}

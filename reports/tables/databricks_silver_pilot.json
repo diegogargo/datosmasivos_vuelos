@@ -1,0 +1,54 @@
+{
+  "layer": "silver",
+  "run_id": "6e9caf9d402243f99840a7b22848b292",
+  "start": "2025-01",
+  "end": "2025-01",
+  "started_at": "2026-10-22T03:49:10.224832+00:00",
+  "complete": true,
+  "months": [
+    {
+      "period": "2025-01",
+      "source_rows": 539747,
+      "silver_rows": 539747,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0,
+      "violations_by_reason": {},
+      "silver_delta_version": 1,
+      "quarantine_delta_version": 1
+    }
+  ],
+  "spark_version": "4.2.0",
+  "timezone_dimension": {
+    "source": "https://raw.githubusercontent.com/mborsetti/airportsdata/47ae282a8491758e6dafe28d4139539e561b54d5/airportsdata/airports.csv",
+    "commit": "47ae282a8491758e6dafe28d4139539e561b54d5",
+    "source_sha256": "516c57d9d999f7a3be28ca649d2badbe3b972f07e57dc6173ab973b72d51cf52",
+    "artifact_sha256": "67412696ead340ca0a69c35974f7f034e6f46038093d33d5f4667d7b038417fc",
+    "rows": 7884,
+    "excluded_ambiguous_iata": [],
+    "transformation": "IATA no vacío, TZ no vacía, una zona distinta por IATA; dimensión actual, sin inventar correspondencia histórica BTS.",
+    "limitations": "La fuente de aeropuertos es comunitaria y actual; no certifica por sí sola todos los cambios de código 2024–2025. Silver reporta cobertura y conserva IDs BTS.",
+    "artifact_encoding": "UTF-8",
+    "artifact_line_endings": "LF"
+  },
+  "source_delta_version": 25,
+  "policies": {
+    "exact_duplicates": "Sobre todos los campos originales; exclusiones contadas.",
+    "conflicting_keys": "Todas las filas contradictorias se envían a cuarentena.",
+    "DST": "Horas inexistentes o ambiguas se envían a cuarentena; ámbito US/territorios 2024–2025.",
+    "timezone_mapping": "Dimensión actual comunitaria, sin certificación histórica de cada código IATA. IDs BTS preservados."
+  },
+  "staging_table": "workspace.silver.vuelos_stage_6e9caf9d402243f99840a7b22848b292",
+  "finished_at": "2026-10-22T03:50:13.412635+00:00",
+  "rows": 539747,
+  "quarantine_rows": 0,
+  "staging_removed": true,
+  "execution_role": "Código de Jose Miguel asistido por Codex; workspace de integración de Diego.",
+  "recovery": {
+    "recovered_at": "2026-10-22T04:06:09.882941+00:00",
+    "from_existing_run": true,
+    "code_hashes_at_submission_recovered": false,
+    "note": "Resultado del job original; los hashes locales de la transferencia se perdieron al cerrar el monitor."
+  },
+  "quality_summary_passed": false,
+  "quality_note": "Initial pilot verified volume only; decimal flag parsing defect was detected later. Superseded for typed-quality certification."
+}
