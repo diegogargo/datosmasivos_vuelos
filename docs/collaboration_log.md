@@ -12,7 +12,7 @@ La organización inicial se preparó con asistencia de IA. Este documento no acr
 ## Segundo parcial
 | Integrante | Aporte técnico / PR | Documentación o validación | Review realizada | Integración y respuesta a comentarios |
 |---|---|---|---|---|
-| Diego | [PR #14](https://github.com/diegogargo/datosmasivos_vuelos/pull/14) adquisición verificada; [PR #15](https://github.com/diegogargo/datosmasivos_vuelos/pull/15) Bronze con piloto real, revisión pendiente | [PR #16](https://github.com/diegogargo/datosmasivos_vuelos/pull/16): benchmark muestra/mes completo, pruebas y guías; ver diego_progress.md | Pendiente | Pendiente de Silver/Gold |
+| Diego | [PR #14](https://github.com/diegogargo/datosmasivos_vuelos/pull/14) adquisición verificada; [PR #15](https://github.com/diegogargo/datosmasivos_vuelos/pull/15) Bronze completo de 24 meses, revisión pendiente | [PR #16](https://github.com/diegogargo/datosmasivos_vuelos/pull/16): reportes reales, benchmark muestra/mes completo, pruebas y guías; ver diego_progress.md | Pendiente | Pendiente de Silver/Gold |
 | Jose Miguel | Pendiente | Pendiente | Pendiente | Pendiente |
 | Santiago | Pendiente | Pendiente | Pendiente | Pendiente |
 

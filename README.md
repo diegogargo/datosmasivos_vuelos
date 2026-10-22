@@ -34,7 +34,7 @@ Construir un flujo reproducible de adquisición, limpieza, validación y anális
 | Muestra regenerada | 5,000 filas; 164 cancelados; 4,836 elegibles; 896 retrasos >=15 min (18.53%) |
 | Ejecución local | Adquisición verificable, limpieza, raw/interim/processed, validaciones, pruebas y benchmark sobre muestra |
 | EDA | Notebook portable ejecutado; antecedentes identificados por separado |
-| Databricks/PySpark/Delta | Piloto Bronze real: enero 2025, 539,747 filas, Spark 4.2.0; integración y rango completo por verificar |
+| Databricks/PySpark/Delta | Bronze completo: 24 meses, 14,080,680 filas, Spark 4.2.0; enero 2025 reemplazado sin duplicación. Silver/Gold e integración pendientes |
 | Histórico completo 2024–2025 | 24 meses adquiridos y verificados: 14,080,680 filas; ZIP/CSV fuera de Git. El Parquet histórico de muestra de 120,000 filas no fue entregado |
 | Variables y modelo a 3 h | Propuestos; no entrenados ni validados en esta base |
 | Colaboración | Tareas repartidas; los aportes y revisiones individuales deben realizarlos los integrantes |

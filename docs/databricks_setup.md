@@ -21,10 +21,10 @@ La carga funciona por meses y `replaceWhere` sustituye únicamente el mes corres
 
 Cada integrante conserva su propia identidad. Verificar opciones de acceso y colaboración de la edición real; si trabajan en workspaces separados, GitHub transmite el código y cada cuenta ejecuta sus capas con sus archivos. No compartir credenciales. Silver pertenece a Jose Miguel y Gold a Santiago.
 
-## Evidencia pendiente de cierre
+## Evidencia actual y cierre pendiente
 - Catálogo `workspace`, esquemas y Volume del proyecto comprobados durante el piloto. La primera ejecución de lectura llegó al conteo y falló por un alias de escritura; la corrección SQL permitió completar el piloto.
-- Conteos originales y Bronze de cada mes, versión Spark y versión Delta.
-- Reejecución de un mes sin duplicación y cobertura completa 2024–2025.
+- `reports/tables/databricks_bronze_result.json`: ejecución completa de los 24 meses, 14,080,680 filas, conteos originales y Bronze conciliados por mes, Spark 4.2.0 y versiones Delta.
+- `reports/tables/databricks_bronze_validation.json`: enero 2025 volvió a cargarse durante el rango completo y conservó 539,747 filas y el mismo hash de origen, con una versión Delta posterior; no se duplicó. Esta prueba de reejecución se limita a ese mes.
 - Ejecución posterior de Silver/Gold e integración de sus PR revisados.
 
 Referencia: [archivos en Volumes](https://docs.databricks.com/aws/en/volumes/volume-files) y [sobrescritura selectiva Delta](https://docs.databricks.com/aws/en/delta/selective-overwrite).

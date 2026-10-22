@@ -1,11 +1,11 @@
 {
-  "executed_at": "2026-10-22T01:45:13.079817+00:00",
+  "executed_at": "2026-10-22T02:28:25.314857+00:00",
   "period": {
     "start": "2024-01",
     "end": "2025-12"
   },
   "local_components_passed": true,
-  "raw_hashes_requested": true,
+  "raw_hashes_requested": false,
   "checks": [
     {
       "command": "-m src.ingestion.validate_provenance",
@@ -26,17 +26,13 @@
     {
       "command": "scripts/check_repository.py",
       "passed": true
-    },
-    {
-      "command": "-m src.validation.validate_acquisition --verify-files",
-      "passed": true
     }
   ],
   "databricks_evidence": {
     "bronze": {
-      "report_exists": false,
-      "complete_report": false,
-      "covers_project_period": false
+      "report_exists": true,
+      "complete_report": true,
+      "covers_project_period": true
     },
     "silver": {
       "report_exists": false,

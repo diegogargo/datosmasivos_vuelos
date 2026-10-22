@@ -6,7 +6,7 @@ Alcance final: enero 2024–diciembre 2025 completos. El EDA original y la muest
 |---|---|---|
 | P1-01 / #1 | Verificador de procedencia ejecutado; 15 casos nuevos; PR #13 con revisión solicitada | Revisión de Jose Miguel y merge |
 | P2-01 / #4 | Rango completo adquirido: 24 meses, 14,080,680 vuelos; ZIP/CSV, hashes, fechas, reanudación, bloqueo y pruebas verificados | Revisión del PR pendiente |
-| P2-04 / #7 | Bronze Delta, contratos y ejecutor de CLI segura preparados y probados localmente | Piloto real: 539,747 filas, Spark 4.2.0; cierre de cobertura completa e idempotencia pendientes |
+| P2-04 / #7 | Bronze Delta completo: 24 meses, 14,080,680 filas, Spark 4.2.0; enero 2025 reemplazado sin duplicar sus 539,747 filas | Revisión del PR e integración del equipo |
 | P2-07 / #10 | Benchmark de 5,000 y 539,747 vuelos, cinco repeticiones y pico del proceso; guías publicadas en PR #16 | Silver/Gold del equipo, integración y reviews |
 
 La suite local completa tiene 82 pruebas aprobadas en esta revisión. Esto no certifica ejecución Spark ni revisiones humanas. Los enlaces del workspace y estado de acceso quedan fuera de Git.

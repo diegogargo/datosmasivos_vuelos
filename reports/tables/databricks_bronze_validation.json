@@ -1,0 +1,29 @@
+{
+  "executed_at": "2026-10-22T02:31:11.760747+00:00",
+  "passed": true,
+  "period": {
+    "start": "2024-01",
+    "end": "2025-12"
+  },
+  "months": 24,
+  "bronze_rows": 14080680,
+  "source_and_bronze_rows_equal_for_each_month": true,
+  "original_columns": 110,
+  "metadata_columns": 8,
+  "spark_version": "4.2.0",
+  "uploaded_critical_code_matches": true,
+  "monthly_replay": {
+    "period": "2025-01",
+    "same_source_csv_sha256": true,
+    "rows_before": 539747,
+    "rows_after": 539747,
+    "delta_version_before": 1,
+    "delta_version_after": 14,
+    "conclusion": "El piloto fue reemplazado durante el rango completo sin duplicar las filas de enero 2025."
+  },
+  "limitations": [
+    "Reejecución observada para enero 2025; no se repitieron individualmente los otros 23 meses.",
+    "Los metadatos de run_id e ingested_at cambian en una reejecución.",
+    "No acredita Silver, Gold ni reviews humanas."
+  ]
+}

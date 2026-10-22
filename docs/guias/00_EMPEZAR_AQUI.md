@@ -61,7 +61,7 @@ Codex: inspeccionar archivos, implementar el módulo, escribir y ejecutar prueba
 
 ## 6. Databricks: una ruta sencilla para el equipo
 
-La ejecución integrada se centraliza inicialmente en el workspace de Diego. Ya se ejecutó un piloto Bronze de enero 2025 con 539,747 vuelos. La carga completa de 24 meses tiene una ejecución separada; comprobar su reporte antes de declararla terminada.
+La ejecución integrada se centraliza inicialmente en el workspace de Diego. Bronze ya terminó los 24 meses de 2024–2025 con 14,080,680 vuelos en Spark 4.2.0; ver `reports/tables/databricks_bronze_result.json`. Enero 2025, previamente cargado como piloto, conservó 539,747 filas al reemplazarse durante la carga completa. La comprobación y sus límites están en `databricks_bronze_validation.json`. No repetir esa descarga o carga para empezar Silver: comprobar primero los reportes y las tablas existentes.
 
 Jose Miguel y Santiago pueden comenzar su primer parcial sin Databricks y preparar los módulos del segundo parcial en sus ramas. Después Diego ejecuta los módulos revisados en el workspace de integración. Esto permite tres autores reales en GitHub y una ejecución común documentada; no exige compartir la contraseña de Databricks.
 

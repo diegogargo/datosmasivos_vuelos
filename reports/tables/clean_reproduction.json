@@ -1,5 +1,5 @@
 {
-  "executed_at": "2026-10-22T02:26:09.158866+00:00",
+  "executed_at": "2026-10-22T02:31:11.930254+00:00",
   "source_commit": "c5bc98359d9a33b33d0eb1c24af9761b5285e90c",
   "method": "git archive de un commit publicado, extraído en una carpeta nueva sin datos raw; entorno de dependencias existente",
   "python_version": "3.13.15",

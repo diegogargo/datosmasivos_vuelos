@@ -6,7 +6,7 @@ Lee primero `00_EMPEZAR_AQUI.md`. Tus revisiones las hace Jose Miguel (`GUEVARA2
 
 - P1-01, issue #1: verificador CSV/Parquet/manifiesto, pruebas y [PR #13](https://github.com/diegogargo/datosmasivos_vuelos/pull/13).
 - P2-01, issue #4: ingesta por rango y [PR #14](https://github.com/diegogargo/datosmasivos_vuelos/pull/14). Descarga de 24 meses completa: 14,080,680 filas; 709,735,704 bytes ZIP y 6,370,981,019 bytes CSV, fuera de Git.
-- P2-04, issue #7: Bronze y ejecutor en [PR #15](https://github.com/diegogargo/datosmasivos_vuelos/pull/15). Piloto de enero 2025 real, 539,747 filas. La evidencia del rango completo debe comprobarse aparte.
+- P2-04, issue #7: Bronze y ejecutor en [PR #15](https://github.com/diegogargo/datosmasivos_vuelos/pull/15). Ejecución completa de los 24 meses: 14,080,680 filas, Spark 4.2.0. Enero 2025 se reemplazó después del piloto y conservó 539,747 filas, sin duplicarse. Reportes reales en `reports/tables/databricks_bronze_result.json` y `databricks_bronze_validation.json`.
 - P2-07, issue #10: benchmark real de muestra y mes completo, verificación de cobertura e inicio del recorrido de integración. La integración depende de Silver y Gold.
 
 No vuelvas a empezar estos módulos ni regeneres el notebook original. Tus datos ya están en la copia de trabajo existente de Codex.
@@ -20,11 +20,11 @@ Soy Diego García, usuario GitHub diegogargo. Continúa mi parte del repositorio
 
 Lee README.md, config/project.yaml, docs/guias/00_EMPEZAR_AQUI.md, docs/team/diego.md, docs/bronze_contract.md y mis issues #1, #4, #7 y #10. Alcance definitivo: enero 2024 a diciembre 2025, 24 meses completos. El EDA y la muestra son una parte distinta del volumen completo.
 
-Comprueba los PR #13, #14 y #15 y el PR de P2-07 si ya existe. No dupliques ramas o PR. Se prepararon cambios con Codex y la asistencia debe seguir declarada. Verifica revisión de GUEVARA21, CI y los reportes reales antes de marcar algo completo.
+Comprueba los PR #13, #14, #15 y #16. No dupliques ramas o PR. Se prepararon cambios con Codex y la asistencia debe seguir declarada. Verifica revisión de GUEVARA21, CI y los reportes reales antes de marcar algo completo.
 
 Verifica reports/tables/acquisition_full.json y acquisition_validation.json: 24 meses y 14,080,680 filas. Confirma hashes de los archivos locales si hace falta, sin descargarlos de nuevo cuando la caché sea válida. No subas data/raw, data/interim, data/processed ni credenciales a GitHub.
 
-Comprueba el reporte actual de Databricks, sus campos start/end/months/rows/complete y la evidencia privada local sin publicar el host o datos de la cuenta. Un piloto de enero 2025 no prueba los 24 meses. Existe scripts/run_databricks.py, usa el perfil seguro vuelos. Si Windows impide usar el almacén seguro desde el sandbox, prepara un único comando para mi PowerShell; no cambies a tokens en texto plano. Ante un fallo recupera el diagnóstico real y corrige la causa. El ejecutor ya tiene --diagnose-run y --resume.
+Comprueba el reporte actual de Databricks, sus campos start/end/months/rows/complete y la evidencia privada local sin publicar el host o datos de la cuenta. Ya terminó Bronze 2024-01 a 2025-12 con 14,080,680 filas; verifica la evidencia y no repitas la carga completa sin necesidad. Un piloto aislado no probaría los 24 meses. Existe scripts/run_databricks.py, usa el perfil seguro vuelos. Si Windows impide usar el almacén seguro desde el sandbox, prepara un único comando para mi PowerShell; no cambies a tokens en texto plano. Ante un fallo recupera el diagnóstico real y corrige la causa. El ejecutor ya tiene --diagnose-run y --resume.
 
 Conserva Bronze con todos los campos originales y metadatos. Su tabla es workspace.bronze.vuelos_raw. Usa CREATE TABLE mediante SQL: el alias errorifexists falló en Spark Connect y ya se corrigió. Conserva reemplazo mensual e idempotencia.
 
@@ -62,7 +62,7 @@ Si ya se preparó el entorno y se transfirió exactamente ese mes, para reintent
 
 ### Los 24 meses completos
 
-No lanzar otra copia si la carga ya está trabajando. Consultar el reporte o el progreso local primero.
+La carga completa ya terminó. Este comando queda como referencia para reproducirla si se necesita; no ejecutarlo otra vez solo para continuar con las guías. Consultar el reporte y el progreso local primero.
 
 ```powershell
 ..\..\work\env\Scripts\python.exe scripts/run_databricks.py --cli ..\..\work\tools\databricks.exe --profile vuelos --start 2024-01 --end 2025-12 --execute
