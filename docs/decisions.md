@@ -3,8 +3,8 @@
 ## 1. Preservar el trabajo del equipo
 **Decisión:** mantener el notebook original byte a byte y separar complementos reproducibles. **Razón:** conservar resultados y autoría histórica sin inventar ejecuciones nuevas. **Alternativa:** editar directamente el original. **Consecuencia:** hay antecedentes con rutas Colab; el README indica qué notebook se puede ejecutar ahora.
 
-## 2. Periodo inicial de dos años (sustituido para el pipeline)
-**Decisión inicial:** 2024–2025, alcance del notebook del equipo. **Actualización:** el usuario eligió enero 2024–diciembre 2025 para el pipeline completo. El EDA inicial conserva dos años. Se documentan ambos periodos para no mezclar muestras, antecedentes y nuevos conteos de población.
+## 2. Periodo de dos años para el pipeline completo
+**Decisión:** enero 2024–diciembre 2025 completos, conforme al último alcance elegido por el usuario. El EDA inicial conserva sus dos años y se distingue de la población completa. Se documentan muestra, antecedentes y nuevos conteos de población por separado.
 
 ## 3. Etiqueta y cancelaciones
 **Decisión:** `DepDelay >=15` solo para operados con resultado; cancelados conservados con etiqueta nula. **Razón:** no confundir cancelación con puntualidad. **Alternativa:** rellenar retraso nulo con cero. **Consecuencia:** denominador elegible explícito; se conservan retrasos negativos reales.

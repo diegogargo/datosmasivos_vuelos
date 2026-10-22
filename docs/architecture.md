@@ -20,7 +20,7 @@ flowchart TD
 
 Los archivos generados grandes viven fuera de Git; Git incluye solo muestra y evidencia pequeña. El modo local opera sobre la muestra, con pandas y PyArrow. El raw completo se obtiene por separado. La CI usa la muestra incluida, por lo que no depende de la disponibilidad de BTS.
 
-## Arquitectura Databricks: Bronze preparado; ejecución por verificar
+## Arquitectura Databricks: Bronze completo; Silver y Gold pendientes
 ```mermaid
 flowchart TD
     A[ZIP BTS completos de 24 meses de 2024–2025] --> B[Volume: originales, CSV descomprimidos y manifiestos]
@@ -29,9 +29,9 @@ flowchart TD
     D --> E[Gold Delta: conjuntos analíticos y agregados]
     E --> F[EDA y modelo preliminar con división temporal]
 ```
-Correspondencia conceptual: raw → Bronze, interim → Silver, processed → Gold. Las carpetas locales no son tablas Delta. Tablas propuestas: `bronze.flights_raw`, `silver.flights_clean`, `gold.flight_features`, `gold.delay_monthly`, `gold.delay_distribution`. Los nombres del catálogo y Volume se documentarán cuando existan; no se inventan rutas de un workspace.
+Correspondencia conceptual: raw → Bronze, interim → Silver, processed → Gold. Las carpetas locales no son tablas Delta. El catálogo real es `workspace` y el Volume es `/Volumes/workspace/bronze/vuelos_raw/vuelos`. La tabla ejecutada es `workspace.bronze.vuelos_raw`. Silver y Gold siguen siendo contratos pendientes, con los nombres acordados en `docs/guias/00_EMPEZAR_AQUI.md`.
 
-Pendientes: esquema explícito en PySpark, dimensión verificable de aeropuertos/zonas, cuarentena de errores, escrituras Delta idempotentes, pruebas sobre tablas reales y trazabilidad del job. Clima queda condicionado a una fuente válida al corte. Las dos tasas históricas exigen `available_at`, además del tiempo del evento.
+Bronze ya usa esquema explícito PySpark, procedencia y reemplazo mensual Delta con conteos reales. Pendientes en Silver/Gold: tipos analíticos, dimensión verificable de aeropuertos/zonas, cuarentena, escrituras y pruebas entre sus tablas reales. Las tasas históricas requieren una política explícita de disponibilidad, además del tiempo del evento. No se incluye clima en este alcance.
 
 ## Escalabilidad y límites
 La regeneración local carga un CSV mensual completo y no es distribuida. Los 24 meses de 2024–2025 originales guardan aproximadamente 14.08 millones de filas. Para estudiar escala procesar meses completos, medir operaciones equivalentes y observar memoria/tiempos; no presentar un benchmark de 5,000 filas como prueba de desempeño Spark.
@@ -47,3 +47,5 @@ Databricks/Delta facilitarían particiones, lecturas por columnas y procesamient
 - `benchmark_scale`: procesos separados, muestra frente a mes completo y pico de memoria definido.
 
 Los 24 meses completos y el piloto Databricks requieren sus respectivos reportes `complete=true`. La presencia de código no sustituye esa evidencia. Ver el contrato Bronze para la conexión con Silver y Gold.
+
+La ejecución completa de Bronze finalizó con 14,080,680 filas de los 24 meses, en Spark 4.2.0. Enero 2025, cargado previamente como piloto, conservó 539,747 filas al reemplazarse durante el rango completo. Ver los reportes `databricks_bronze_result.json` y `databricks_bronze_validation.json`. Silver y Gold siguen pendientes de implementación e integración por sus responsables; las guías fijan firmas de funciones y tablas para que puedan trabajar sin duplicar módulos.

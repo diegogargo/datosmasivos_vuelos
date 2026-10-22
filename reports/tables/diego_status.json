@@ -1,0 +1,39 @@
+{
+  "executed_at": "2026-10-22T03:03:32.569565+00:00",
+  "account": "diegogargo",
+  "period": {
+    "start": "2024-01",
+    "end": "2025-12"
+  },
+  "tests": {
+    "passed": 82,
+    "failed": 0,
+    "seconds": 3.73
+  },
+  "original_notebook_sha256": "242eb31ac2994ba10a9ccb3f3a4d6390e661728c87e7774d4f0d7e1fbb8ff358",
+  "local_components_passed": true,
+  "all_raw_hashes_verified": true,
+  "bronze_months": 24,
+  "bronze_rows": 14080680,
+  "spark_version": "4.2.0",
+  "technical_deliverables_ready_for_review": [
+    1,
+    4,
+    7
+  ],
+  "integration_issue": 10,
+  "integration_complete": false,
+  "pull_requests": [
+    13,
+    14,
+    15,
+    16
+  ],
+  "reviews_observed": 0,
+  "pending": [
+    "Review de Jose Miguel a PR #13/#14/#15 y merge en orden.",
+    "Review de Diego al PR de Santiago cuando exista.",
+    "Silver/Gold, validación entre capas e integración para completar #10."
+  ],
+  "assistance": "Implementación, pruebas y documentación asistidas por Codex; no acredita aportaciones o revisiones ajenas."
+}

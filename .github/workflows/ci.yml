@@ -19,4 +19,5 @@ jobs:
       - run: python -m src.validation.audit_sample
       - run: python -m src.processing.build_dataset
       - run: python -m src.validation.validate_dataset
+      - run: python -m src.validation.validate_acquisition
       - run: python scripts/check_repository.py

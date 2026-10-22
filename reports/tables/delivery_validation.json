@@ -1,0 +1,54 @@
+{
+  "executed_at": "2026-10-22T02:58:03.144092+00:00",
+  "period": {
+    "start": "2024-01",
+    "end": "2025-12"
+  },
+  "local_components_passed": true,
+  "raw_hashes_requested": true,
+  "checks": [
+    {
+      "command": "-m src.ingestion.validate_provenance",
+      "passed": true
+    },
+    {
+      "command": "-m src.validation.audit_sample",
+      "passed": true
+    },
+    {
+      "command": "-m src.processing.build_dataset",
+      "passed": true
+    },
+    {
+      "command": "-m src.validation.validate_dataset",
+      "passed": true
+    },
+    {
+      "command": "scripts/check_repository.py",
+      "passed": true
+    },
+    {
+      "command": "-m src.validation.validate_acquisition --verify-files",
+      "passed": true
+    }
+  ],
+  "databricks_evidence": {
+    "bronze": {
+      "report_exists": true,
+      "complete_report": true,
+      "covers_project_period": true
+    },
+    "silver": {
+      "report_exists": false,
+      "complete_report": false,
+      "covers_project_period": false
+    },
+    "gold": {
+      "report_exists": false,
+      "complete_report": false,
+      "covers_project_period": false
+    }
+  },
+  "team_integration_complete": false,
+  "limitation": "La presencia de código o un piloto de un mes no demuestra integración de los 24 meses. Las reviews se verifican en GitHub."
+}

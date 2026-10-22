@@ -10,7 +10,7 @@ Frecuencia: publicación histórica mensual, susceptible a revisiones. La fecha 
 ## Periodo y volumen
 Alcance aprobado para el pipeline: **2024–2025, 24 meses completos, sin muestreo**. El EDA original conserva 2024–2025, 24 meses. Los conteos originales conservados en la celda 17 del notebook suman **14,080,680 filas**: 7,079,061 en 2024 y 7,001,619 en 2025. Son conteos de una ejecución histórica guardada de dos años, no sustituyen una nueva adquisición auditada del mismo periodo.
 
-El notebook guarda una muestra de 5,000 filas por mes, 120,000 en total. Su Parquet histórico no fue entregado. Esta base conserva esas salidas y solo volvió a descargar enero 2025 para producir una muestra evaluable. Las 120,000 filas no equivalen a los 14.08 millones de vuelos originales.
+El notebook guarda una muestra de 5,000 filas por mes, 120,000 en total. Su Parquet histórico no fue entregado. Se conservan esas salidas. La muestra pública regenerada sigue limitada a enero 2025; por separado ya se adquirieron y verificaron los 24 meses completos. Las 120,000 filas no equivalen a los 14.08 millones de vuelos originales.
 
 ## Comando de adquisición
 Desde la raíz, con dependencias instaladas:
@@ -41,3 +41,9 @@ No se integró clima en esta base. Un experimento anterior mencionado en el cont
 El manifiesto `data/raw/manifest.json` se actualiza por mes y permite reanudar archivos completos verificando sus hashes. Los CSV quedan en `data/raw/csv/YYYY-MM/flights.csv`. Un lock impide dos escritores simultáneos. Los errores se registran por mes y el comando termina con código 1 si falta cualquier mes. El reporte pequeño `reports/tables/acquisition_full.json` contiene cobertura, conteos, bytes, hashes y tiempos reales; solo `complete=true` confirma todos los meses solicitados.
 
 La reanudación es por archivos completos. Una descarga interrumpida vuelve a descargar el archivo parcial; no usa HTTP Range. Si el proceso se interrumpe entre guardar un archivo y su manifiesto, el archivo huérfano se rechaza hasta verificar su procedencia. La caché garantiza integridad local y no detecta automáticamente revisiones remotas de BTS. Ejecutar una sola ingesta por repositorio; revisar un lock residual antes de retirarlo.
+
+
+## Resultado real de adquisición del alcance final
+Se adquirieron y verificaron los 24 meses de 2024–2025: **14,080,680 filas**, 7,079,061 en 2024 y 7,001,619 en 2025. Los originales ocupan 709,735,704 bytes ZIP y 6,370,981,019 bytes CSV. Los conteos coinciden con el antecedente del equipo, pero ahora tienen una inspección nueva y hashes verificados de los archivos completos. Enero 2025 reutilizó el ZIP válido de la muestra; su caché se declara en el reporte.
+
+`reports/tables/acquisition_full.json` contiene exclusivamente el periodo final, URLs, fechas, conteos, tamaños y hashes. `acquisition_validation.json` documenta la comprobación de cobertura, totales y archivos locales. Los originales de otros años descargados durante preparación permanecen fuera del alcance, de los totales publicados y de Git.

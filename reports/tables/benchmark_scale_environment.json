@@ -1,0 +1,72 @@
+{
+  "executed_at": "2026-10-22T01:23:24.476467+00:00",
+  "python": "3.13.15",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "pandas": "3.0.6",
+  "pyarrow": "26.0.0",
+  "repeats": 5,
+  "warmup_per_format": 1,
+  "process": "proceso nuevo por lectura; imports fuera del tiempo, dentro del pico",
+  "memory": "Máximo del proceso: PeakWorkingSetSize en Windows; ru_maxrss en Unix. No incremento neto ni memoria Spark.",
+  "operation": "lectura de 21 campos de todos los vuelos del archivo + elegibles finitos + conteo >=15 + suma retrasos elegibles",
+  "cache": "Caché de archivos del SO sin vaciar; procesos nuevos y formatos alternados",
+  "scope": "Benchmark local de muestra y/o enero 2025 completo. No mide Databricks ni extrapola a cuatro años.",
+  "inputs": [
+    {
+      "dataset": "sample_2025_01",
+      "format": "csv",
+      "sha256": "82d627cc6f7e38fb97d018751a5384fbc4894cf9a60824dd42dc8aca9ee25537",
+      "file_bytes": 477547
+    },
+    {
+      "dataset": "sample_2025_01",
+      "format": "parquet",
+      "sha256": "0990478dde90555a7692cd161aab01b27bc6e62db69383cabbcd262888cbde5a",
+      "file_bytes": 162501
+    },
+    {
+      "dataset": "full_2025_01",
+      "format": "csv",
+      "sha256": "dd9839ec5f4da49bb9e17ed49c0b13f57f40f7cc9f8a87b0b8758d49f01b0f76",
+      "file_bytes": 51538953
+    },
+    {
+      "dataset": "full_2025_01",
+      "format": "parquet",
+      "sha256": "bde7bb1d407d123601b77b11335dc825aefb56cb03187fbf095a32cdc6a4c888",
+      "file_bytes": 7777803
+    }
+  ],
+  "full_month_preparation": {
+    "created_at": "2026-10-22T01:21:13.710902+00:00",
+    "sample": false,
+    "rows": 539747,
+    "columns": [
+      "FlightDate",
+      "Reporting_Airline",
+      "Flight_Number_Reporting_Airline",
+      "Tail_Number",
+      "Origin",
+      "Dest",
+      "Distance",
+      "CRSDepTime",
+      "CRSArrTime",
+      "CRSElapsedTime",
+      "DepTime",
+      "ArrTime",
+      "DepDelay",
+      "ArrDelay",
+      "Cancelled",
+      "Diverted",
+      "CarrierDelay",
+      "WeatherDelay",
+      "NASDelay",
+      "SecurityDelay",
+      "LateAircraftDelay"
+    ],
+    "source_zip_sha256": "868387dcedaef1b8d8392e608e642219fde50d594c3cf2094aec858167629ccf",
+    "csv_sha256": "dd9839ec5f4da49bb9e17ed49c0b13f57f40f7cc9f8a87b0b8758d49f01b0f76",
+    "parquet_sha256": "bde7bb1d407d123601b77b11335dc825aefb56cb03187fbf095a32cdc6a4c888",
+    "verification": "igualdad completa de valores, orden y nulos; rtol=1e-12, atol=1e-9"
+  }
+}
