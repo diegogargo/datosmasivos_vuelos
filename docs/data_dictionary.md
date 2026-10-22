@@ -35,6 +35,21 @@ Muestra regenerada: enero de 2025, 5,000 filas. Los porcentajes son calculados s
 
 Clave candidata: `FlightDate`, `Reporting_Airline`, `Flight_Number_Reporting_Airline`, `Origin`, `Dest`, `CRSDepTime`. Las repeticiones exactas se eliminan con conteo; una clave repetida con datos distintos bloquea el procesamiento.
 
+## Contrato de calidad P1-02, preparado con Codex
+
+| Campos | Política de nulos y dominio |
+|---|---|
+| `FlightDate`, aerolínea, número de vuelo, `Origin`, `Dest`, `CRSDepTime` | Clave requerida; fecha válida, aeropuertos de tres letras, número de vuelo entero positivo |
+| `CRSDepTime`, `CRSArrTime` | Horario programado requerido; HHMM entero válido, incluidos `0000` y `2400`; `1260`, fracciones e infinitos se rechazan |
+| `Distance`, `Cancelled`, `Diverted` | Distancia finita positiva e indicadores binarios requeridos |
+| `Tail_Number` | Nulo permitido; no se inventa una matrícula |
+| `DepTime`, `ArrTime` | Nulo permitido; si está observado debe cumplir HHMM válido |
+| `CRSElapsedTime`, `ArrDelay` | Nulo permitido; si está observado debe ser numérico finito |
+| `DepDelay` | Finito y observado para elegibilidad de un operado; negativo válido. Puede faltar en cancelados y no genera una etiqueta de puntualidad |
+| `CarrierDelay`, `WeatherDelay`, `NASDelay`, `SecurityDelay`, `LateAircraftDelay` | Nulos permitidos, sin rellenarlos con cero. Si están observados deben ser numéricos finitos. Son causas posteriores, no predictores conocidos tres horas antes |
+
+La tasa es retrasados `>=15` divididos entre operados con `DepDelay` finito observado. Si el denominador es cero, la tasa se publica como `null`, nunca como cero. Un cancelado con `DepDelay` reportado conserva etiqueta nula.
+
 ## Variables nuevas propuestas, todavía pendientes
 | Variable | Definición propuesta | Condición |
 |---|---|---|

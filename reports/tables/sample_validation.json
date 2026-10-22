@@ -1,5 +1,5 @@
 {
-  "validated_at": "2026-10-21T23:41:18.856745+00:00",
+  "validated_at": "2026-10-22T03:16:04.437174+00:00",
   "passed": true,
   "rows": 5000,
   "columns": 21,
@@ -25,6 +25,86 @@
       "passed": true
     },
     {
+      "check": "finite_observed_ArrDelay",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "finite_observed_ArrTime",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "finite_observed_CRSArrTime",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "finite_observed_CRSDepTime",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "finite_observed_CRSElapsedTime",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "finite_observed_Cancelled",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "finite_observed_CarrierDelay",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "finite_observed_DepDelay",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "finite_observed_DepTime",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "finite_observed_Distance",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "finite_observed_Diverted",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "finite_observed_Flight_Number_Reporting_Airline",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "finite_observed_LateAircraftDelay",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "finite_observed_NASDelay",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "finite_observed_SecurityDelay",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "finite_observed_WeatherDelay",
+      "violations": 0,
+      "passed": true
+    },
+    {
       "check": "cancelled_binary",
       "violations": 0,
       "passed": true
@@ -36,6 +116,26 @@
     },
     {
       "check": "scheduled_hhmm",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "arrival_scheduled_hhmm",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "observed_hhmm_DepTime",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "observed_hhmm_ArrTime",
+      "violations": 0,
+      "passed": true
+    },
+    {
+      "check": "flight_number_positive_integer",
       "violations": 0,
       "passed": true
     },
@@ -74,6 +174,7 @@
   "eligible_departures": 4836,
   "delayed_departures": 896,
   "delay_rate": 0.18527708850289495,
+  "delay_rate_denominator": "Cancelled == 0 y DepDelay finito observado",
   "missingness": {
     "FlightDate": 0,
     "Reporting_Airline": 0,
