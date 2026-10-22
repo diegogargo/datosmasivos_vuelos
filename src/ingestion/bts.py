@@ -40,14 +40,15 @@ def fetch(url,target,old=None,opener=urllib.request.urlopen,sleeper=time.sleep):
             part.unlink(missing_ok=True)
             if attempt==2:raise
             sleeper(2**attempt)
-def acquire(year,month):
+def acquire(year,month,root=ROOT):
     if not 1987<=year<=2100 or not 1<=month<=12:raise ValueError('Periodo inválido')
-    path=ROOT/'data/raw/bts'/f'On_Time_Reporting_Carrier_On_Time_Performance_1987_present_{year}_{month}.zip'
-    manifest_path=ROOT/'data/raw/manifest.json'
+    root=Path(root)
+    path=root/'data/raw/bts'/f'On_Time_Reporting_Carrier_On_Time_Performance_1987_present_{year}_{month}.zip'
+    manifest_path=root/'data/raw/manifest.json'
     manifest=read_json(manifest_path) if manifest_path.exists() else {'files':{}}
     period=f'{year}-{month:02d}'
     item=fetch(BASE+path.name,path,manifest['files'].get(period))
-    item.update(path=path.relative_to(ROOT).as_posix(),period=period)
+    item.update(path=path.relative_to(root).as_posix(),period=period)
     manifest['files'][period]=item;manifest['updated_at']=now()
     write_json(manifest_path,manifest)
     return path,item
