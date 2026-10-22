@@ -9,6 +9,10 @@
 
 Repositorio público: [datosmasivos_vuelos](https://github.com/diegogargo/datosmasivos_vuelos).
 
+## Guías para trabajar con Codex
+
+Comenzar por [conexión y preparación](docs/guias/00_EMPEZAR_AQUI.md). Después abrir la guía de [Diego](docs/guias/01_DIEGO.md), [Jose Miguel](docs/guias/02_JOSE_MIGUEL.md) o [Santiago](docs/guias/03_SANTIAGO.md). Incluyen prompts, comandos y celdas de Databricks con sus dependencias. Consultar también [revisiones cruzadas](docs/guias/04_REVISIONES.md).
+
 **Notebook principal de partida:** [Proyecto Notebook original del equipo](notebooks/antecedentes/Proyecto_Notebook_original.ipynb), conservado sin modificar.
 
 ## Problema
@@ -30,8 +34,8 @@ Construir un flujo reproducible de adquisición, limpieza, validación y anális
 | Muestra regenerada | 5,000 filas; 164 cancelados; 4,836 elegibles; 896 retrasos >=15 min (18.53%) |
 | Ejecución local | Adquisición verificable, limpieza, raw/interim/processed, validaciones, pruebas y benchmark sobre muestra |
 | EDA | Notebook portable ejecutado; antecedentes identificados por separado |
-| Databricks/PySpark/Delta | Workspace Free Edition confirmado por captura; catálogo, permisos y ejecución pendientes |
-| Histórico de 24 meses | Salidas guardadas disponibles; Parquet original de 120,000 filas no entregado. Solo enero 2025 se regeneró aquí |
+| Databricks/PySpark/Delta | Piloto Bronze real: enero 2025, 539,747 filas, Spark 4.2.0; integración y rango completo por verificar |
+| Histórico completo 2024–2025 | 24 meses adquiridos y verificados: 14,080,680 filas; ZIP/CSV fuera de Git. El Parquet histórico de muestra de 120,000 filas no fue entregado |
 | Variables y modelo a 3 h | Propuestos; no entrenados ni validados en esta base |
 | Colaboración | Tareas repartidas; los aportes y revisiones individuales deben realizarlos los integrantes |
 

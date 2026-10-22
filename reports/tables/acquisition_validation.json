@@ -1,0 +1,533 @@
+{
+  "executed_at": "2026-10-22T01:45:13.000664+00:00",
+  "start": "2024-01",
+  "end": "2025-12",
+  "verify_files": true,
+  "passed": true,
+  "checks": [
+    {
+      "name": "complete",
+      "passed": true
+    },
+    {
+      "name": "period",
+      "passed": true
+    },
+    {
+      "name": "coverage",
+      "passed": true
+    },
+    {
+      "name": "month_counts",
+      "passed": true
+    },
+    {
+      "name": "not_sampled",
+      "passed": true
+    },
+    {
+      "name": "positive_months",
+      "passed": true
+    },
+    {
+      "name": "hashes_recorded",
+      "passed": true
+    },
+    {
+      "name": "unique_zip_hashes",
+      "passed": true
+    },
+    {
+      "name": "rows_total",
+      "passed": true
+    },
+    {
+      "name": "zip_bytes_total",
+      "passed": true
+    },
+    {
+      "name": "csv_bytes_total",
+      "passed": true
+    },
+    {
+      "name": "2024-01_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2024-01_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-01_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-01_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-01_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-02_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2024-02_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-02_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-02_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-02_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-03_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2024-03_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-03_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-03_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-03_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-04_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2024-04_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-04_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-04_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-04_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-05_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2024-05_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-05_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-05_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-05_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-06_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2024-06_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-06_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-06_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-06_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-07_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2024-07_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-07_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-07_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-07_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-08_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2024-08_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-08_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-08_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-08_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-09_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2024-09_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-09_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-09_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-09_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-10_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2024-10_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-10_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-10_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-10_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-11_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2024-11_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-11_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-11_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-11_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-12_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2024-12_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-12_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2024-12_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2024-12_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-01_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2025-01_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-01_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-01_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-01_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-02_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2025-02_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-02_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-02_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-02_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-03_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2025-03_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-03_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-03_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-03_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-04_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2025-04_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-04_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-04_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-04_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-05_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2025-05_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-05_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-05_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-05_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-06_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2025-06_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-06_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-06_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-06_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-07_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2025-07_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-07_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-07_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-07_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-08_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2025-08_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-08_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-08_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-08_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-09_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2025-09_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-09_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-09_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-09_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-10_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2025-10_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-10_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-10_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-10_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-11_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2025-11_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-11_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-11_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-11_csv_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-12_count_manifest",
+      "passed": true
+    },
+    {
+      "name": "2025-12_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-12_path_integrity",
+      "passed": true
+    },
+    {
+      "name": "2025-12_csv_path_path",
+      "passed": true
+    },
+    {
+      "name": "2025-12_csv_path_integrity",
+      "passed": true
+    }
+  ]
+}

@@ -1,17 +1,21 @@
-# Comparación de desempeño
+# Benchmark de muestra y mes completo
 
-## Operación y método
-Lectura de los mismos 5,000 vuelos y 21 campos en CSV y Parquet, seguida de filtro de vuelos elegibles y conteo de retrasos >=15 min. Una lectura de calentamiento por formato, cinco repeticiones medidas y mediana de tiempo. La caché del sistema operativo no se vació. Resultados: 5,000 totales, 4,836 elegibles y 896 retrasados en ambos formatos.
+## Método nuevo de P2-07
+`python -m src.analysis.benchmark_scale --full-month` compara los mismos 21 campos de enero 2025: la muestra pública de 5,000 vuelos y los 539,747 vuelos completos del ZIP original. La preparación comprueba igualdad de valores, orden y nulos entre CSV y Parquet (rtol=1e-12, atol=1e-9). No se muestrea el mes completo ni se cambia su población.
 
-| Formato | Filas | Bytes de archivo | Mediana (s) | Memoria DataFrame (bytes) | Resultado |
-|---|---:|---:|---:|---:|---|
-| CSV | 5,000 | 477547 | 0.022160 | 960507 | Equivalente |
-| Parquet | 5,000 | 162501 | 0.007802 | 960507 | Equivalente |
+La operación medida lee el archivo y obtiene totales, cancelados, elegibles con retraso finito, retrasos >=15 y suma de retrasos elegibles. Cada lectura usa un proceso nuevo; una repetición de calentamiento y cinco medidas por formato, alternados. Los imports del programa quedan fuera del tiempo y dentro del pico del proceso. La caché del sistema operativo no se vacía. Las mediciones se hicieron mientras se descargaban otros meses; una comparación aislada puede variar.
 
-La memoria es `DataFrame.memory_usage(deep=True)`, no pico RSS ni consumo total del proceso. Ambos DataFrames tienen el mismo contenido y tamaño lógico. Mediciones y versiones: [repeticiones](../reports/tables/benchmark_runs.csv), [resumen](../reports/tables/benchmark_summary.csv), [entorno](../reports/tables/benchmark_environment.json).
+| Conjunto | Formato | Filas | Bytes del archivo | Mediana segundos | Mediana pico proceso MiB |
+|---|---|---:|---:|---:|---:|
+| sample_2025_01 | csv | 5,000 | 477,547 | 0.030872 | 88.70 |
+| sample_2025_01 | parquet | 5,000 | 162,501 | 0.078905 | 96.97 |
+| full_2025_01 | csv | 539,747 | 51,538,953 | 1.301639 | 211.08 |
+| full_2025_01 | parquet | 539,747 | 7,777,803 | 0.157881 | 320.31 |
 
-## Interpretación y límites
-En esta ejecución Parquet ocupó menos espacio y se leyó más rápido. Su compresión/formato columnar son explicaciones compatibles con la medición; no se aisló su contribución individual. La muestra cabe en memoria y el overhead es importante. No demuestra una mejora de Spark ni permite extrapolar tiempos linealmente a 24 meses.
+Todos los resultados de la operación coincidieron entre formatos y repeticiones. En el mes completo Parquet ocupó menos disco y tardó menos en esta ejecución. En la muestra CSV fue más rápido. El pico del proceso fue mayor con Parquet en ambos tamaños; no se afirma que Parquet reduzca siempre RAM. Esta comparación incluye motores y asignaciones internas, sin aislar su efecto individual.
 
-## Reproducción y siguiente escala
-`python -m src.analysis.benchmark`. Ejecutar desde la raíz con las dependencias instaladas; cambiará las mediciones según equipo/carga/caché. No ejecutarlo a la vez que otro benchmark al comparar resultados. Para el segundo parcial medir además un mes completo y, en Databricks, operaciones equivalentes con igualdad de resultados, datos, versiones, tiempo y medida explícita de memoria. Issue P2-07.
+Memoria: `PeakWorkingSetSize` en Windows o `ru_maxrss` en Unix, máximo del proceso desde su inicio, incluidos Python, bibliotecas y operación. Se registra también el tamaño profundo del DataFrame. Son medidas distintas; ninguna equivale a memoria de ejecutores Spark.
+
+Evidencias: `reports/tables/benchmark_scale_runs.csv`, `benchmark_scale_summary.csv` y `benchmark_scale_environment.json`, con versiones, hashes de entradas, repeticiones y límites. El benchmark anterior de la base se conserva en `benchmark_runs.csv`, `benchmark_summary.csv` y `benchmark_environment.json`; usaba el mismo proceso y medía memoria del DataFrame. Sus tiempos no son directamente comparables con el método nuevo.
+
+Este benchmark demuestra el comportamiento local de dos tamaños reales. No mide Databricks ni permite extrapolar el tiempo a los 24 meses. La ejecución integrada de Bronze, Silver y Gold sigue pendiente de sus respectivos módulos y reportes reales.
