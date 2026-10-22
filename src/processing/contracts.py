@@ -9,10 +9,12 @@ COLUMNS=['FlightDate','Reporting_Airline','Flight_Number_Reporting_Airline','Tai
 'SecurityDelay','LateAircraftDelay']
 KEY=['FlightDate','Reporting_Airline','Flight_Number_Reporting_Airline','Origin','Dest','CRSDepTime']
 def label_delay15(cancelled,delay):
-    if pd.isna(cancelled) or float(cancelled)!=0 or pd.isna(delay):
-        return None
-    if not math.isfinite(float(delay)):return None
-    return int(float(delay)>=15)
+    if pd.isna(cancelled) or pd.isna(delay):return None
+    try:
+        cancelled,delay=float(cancelled),float(delay)
+    except (ValueError,TypeError):return None
+    if cancelled!=0 or not math.isfinite(delay):return None
+    return int(delay>=15)
 def hhmm_minutes(value):
     if pd.isna(value):return None
     try:x=float(value)
