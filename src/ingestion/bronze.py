@@ -43,6 +43,16 @@ def column_names(header):
     return names
 
 
+def create_table_ddl(table, original_names):
+    """Crear tabla y propiedades en una operación, compatible con Spark Connect."""
+    column_names(original_names)
+    names = original_names + sorted(METADATA - {'_ingested_at'})
+    fields = ', '.join(f'{identifier(name)} STRING' for name in names)
+    return (f'CREATE TABLE {table_identifier(table)} ({fields}, `_ingested_at` TIMESTAMP) '
+            'USING DELTA PARTITIONED BY (`_source_period`) '
+            "TBLPROPERTIES ('vuelos.layer'='bronze', 'vuelos.source'='bts_reporting_carrier')")
+
+
 def contained_file(root, relative):
     root = Path(root).resolve()
     candidate = (root / relative).resolve()
@@ -134,10 +144,7 @@ def run_bronze(spark, volume_root, table, start='2025-01', end='2025-01', run_id
                 frame = frame.withColumn(name, F.lit(value).cast('string'))
             frame = frame.withColumn('_ingested_at', F.current_timestamp())
             if not spark.catalog.tableExists(table):
-                (frame.limit(0).write.format('delta').mode('errorifexists')
-                 .partitionBy('_source_period').saveAsTable(table))
-                spark.sql(f"ALTER TABLE {quoted} SET TBLPROPERTIES "
-                          "('vuelos.layer'='bronze', 'vuelos.source'='bts_reporting_carrier')")
+                spark.sql(create_table_ddl(table, names))
             properties = {row['key']: row['value'] for row in spark.sql(f'SHOW TBLPROPERTIES {quoted}').collect()}
             if properties.get('vuelos.layer') != 'bronze' or properties.get('vuelos.source') != 'bts_reporting_carrier':
                 raise ValueError('La tabla existente no pertenece a esta ingesta Bronze')

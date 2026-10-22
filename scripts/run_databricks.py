@@ -137,14 +137,17 @@ def execute(args):
     code_hashes = upload_code(client, base)
     params = dict(catalog=args.catalog, volume=args.volume)
     print('Preparando esquemas y Volume del proyecto...', flush=True)
-    setup, _ = submit_and_wait(client, base + '/notebooks/databricks/00_setup', params, 'Vuelos Diego - preparación')
+    setup = None
+    if not args.resume:
+        setup, _ = submit_and_wait(client, base + '/notebooks/databricks/00_setup', params, 'Vuelos Diego - preparación')
     volume_root = f'/Volumes/{args.catalog}/bronze/{args.volume}/vuelos'
     print(f'Transfiriendo {len(requested)} ZIP completos y su manifiesto...', flush=True)
-    client.call('fs', 'mkdirs', 'dbfs:' + volume_root + '/data/raw/bts')
-    for period, item in manifest['files'].items():
-        client.call('fs', 'cp', str(ROOT / item['path']), 'dbfs:' + volume_root + '/' + item['path'], '--overwrite')
-        print(f'ZIP transferido: {period}', flush=True)
-    client.call('fs', 'cp', str(manifest_path), 'dbfs:' + volume_root + '/data/raw/manifest.json', '--overwrite')
+    if not args.resume:
+        client.call('fs', 'mkdirs', 'dbfs:' + volume_root + '/data/raw/bts')
+        for period, item in manifest['files'].items():
+            client.call('fs', 'cp', str(ROOT / item['path']), 'dbfs:' + volume_root + '/' + item['path'], '--overwrite')
+            print(f'ZIP transferido: {period}', flush=True)
+        client.call('fs', 'cp', str(manifest_path), 'dbfs:' + volume_root + '/data/raw/manifest.json', '--overwrite')
     print('Ejecutando Bronze Delta...', flush=True)
     run, output = submit_and_wait(client, base + '/notebooks/databricks/01_bronze',
         dict(params, start=args.start, end=args.end), 'Vuelos Diego - Bronze')
@@ -153,7 +156,7 @@ def execute(args):
         raise ValueError('Bronze no devolvió evidencia completa de los meses solicitados')
     for item in result['months']:
         expected = manifest['files'][item['period']]['csv_rows']
-        if item['source_rows'] != expected or item['bronze_rows'] != expected:
+        if item['source_rows'] != expected or item['bronze_rows'] != expected or item['csv_sha256'] != manifest['files'][item['period']]['csv_sha256']:
             raise ValueError('Conteos de adquisición y Bronze no conciliados')
     # Direcciones privadas y usuario quedan en raw, excluido de Git.
     write_json(ROOT / 'data/raw/databricks_runs_private.json', dict(setup=setup, bronze=run, volume_root=volume_root))
@@ -171,7 +174,22 @@ def main(argv=None):
     parser.add_argument('--start', default='2025-01')
     parser.add_argument('--end', default='2025-01')
     parser.add_argument('--execute', action='store_true')
+    parser.add_argument('--resume', action='store_true', help='Solo después de preparar entorno y transferir esos mismos meses')
+    parser.add_argument('--diagnose-run', type=int, help='Guardar detalles de una ejecución fallida sin modificar el workspace')
     args = parser.parse_args(argv)
+    if args.diagnose_run:
+        cli = args.cli or shutil.which('databricks')
+        if not cli:
+            raise ValueError('Indicar --cli')
+        client = Client(cli, args.profile)
+        run = client.call('jobs', 'get-run', str(args.diagnose_run))
+        task_id = run.get('tasks', [{}])[0].get('run_id', args.diagnose_run)
+        output = client.call('jobs', 'get-run-output', str(task_id))
+        write_json(ROOT / 'data/raw/databricks_diagnostic_private.json', dict(run=run, output=output))
+        print('Diagnóstico guardado para revisión local.')
+        print(output.get('error', ''))
+        print(output.get('error_trace', '')[-10000:])
+        return
     periods = months(args.start, args.end)
     print(f'Plan Databricks: {len(periods)} meses, {args.start} a {args.end}; Bronze solamente.', flush=True)
     if args.execute:

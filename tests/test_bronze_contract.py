@@ -1,6 +1,6 @@
 import pytest
 
-from src.ingestion.bronze import column_names, contained_file, table_identifier, verify_source, volume_root_path
+from src.ingestion.bronze import column_names, contained_file, create_table_ddl, table_identifier, verify_source, volume_root_path
 from src.processing.contracts import COLUMNS
 from src.utils.common import digest
 
@@ -17,6 +17,15 @@ def source(tmp_path):
 def test_empty_header_preserves_column_position():
     names = column_names(COLUMNS + [''])
     assert names[:-1] == COLUMNS and names[-1] == f'_bts_column_{len(COLUMNS)}'
+
+
+def test_creation_contract_includes_raw_strings_timestamp_partition_and_ownership():
+    sql = create_table_ddl('workspace.bronze.vuelos_raw', COLUMNS)
+    assert sql.startswith('CREATE TABLE `workspace`.`bronze`.`vuelos_raw`')
+    assert '`DepDelay` STRING' in sql and '`_ingested_at` TIMESTAMP' in sql
+    assert 'PARTITIONED BY (`_source_period`)' in sql
+    assert "'vuelos.source'='bts_reporting_carrier'" in sql
+    assert 'REPLACE' not in sql and 'DROP' not in sql
 
 
 @pytest.mark.parametrize('header', [COLUMNS[:-1], COLUMNS + ['Origin'], COLUMNS + ['_run_id']])
