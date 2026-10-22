@@ -96,6 +96,7 @@ def submit_and_wait(client, notebook, parameters, name):
                     base_parameters=parameters), timeout_seconds=3600)],
         performance_target='STANDARD'))
     run_id = submitted['run_id']
+    write_json(ROOT / 'data/raw/databricks_progress_private.json', dict(run_id=run_id, name=name, state='SUBMITTED', at=now()))
     deadline = time.monotonic() + 4000
     previous = None
     while time.monotonic() < deadline:
@@ -105,9 +106,13 @@ def submit_and_wait(client, notebook, parameters, name):
         if life != previous:
             print(f'{name}: {life}', flush=True)
             previous = life
+            write_json(ROOT / 'data/raw/databricks_progress_private.json', dict(run_id=run_id, name=name, state=life, at=now()))
         if life in {'TERMINATED', 'SKIPPED', 'INTERNAL_ERROR'}:
             if state.get('result_state') != 'SUCCESS':
-                raise RuntimeError(f'Ejecución {run_id}: {state}')
+                task_id = run.get('tasks', [{}])[0].get('run_id', run_id)
+                diagnostic = client.call('jobs', 'get-run-output', str(task_id))
+                write_json(ROOT / 'data/raw/databricks_diagnostic_private.json', dict(run=run, output=diagnostic))
+                raise RuntimeError(f'Ejecución {run_id}: {diagnostic.get("error", state)}. Diagnóstico guardado localmente.')
             task_id = run.get('tasks', [{}])[0].get('run_id', run_id)
             output = client.call('jobs', 'get-run-output', str(task_id))
             return run, output
