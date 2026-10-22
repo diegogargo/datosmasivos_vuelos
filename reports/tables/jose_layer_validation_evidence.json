@@ -1,0 +1,52 @@
+{
+  "tests": {
+    "passed": 6,
+    "seconds": 134.55
+  },
+  "scope": "Local Spark synthetic layers and error injection; real Gold pending",
+  "prepared_at": "2026-10-22T10:24:17.149188+00:00",
+  "ai_assistance": "Codex",
+  "original_notebook_sha256": "242eb31ac2994ba10a9ccb3f3a4d6390e661728c87e7774d4f0d7e1fbb8ff358",
+  "baseline_diego": "6c4668e6d9ac3d7f72a1c241f664d279b3a3047d",
+  "regression_tests": {
+    "passed": 82,
+    "seconds": 2.29
+  },
+  "databricks_execution": "See real validation report; pending dependencies preserved",
+  "human_review": "Pending Skraeder",
+  "code_sha256": {
+    "src/validation/validate_layers.py": "d0b9c5259deb85be7c21b1fa49a34eb705e655be0bbf0dfa682a42e9530d6c8b",
+    "tests/test_layer_validation.py": "0d987fe6723e3c2ab356e7c578f7a846b042618acfdaac5e707bcf5da28bdee0",
+    "notebooks/databricks/03_history_validation.py": "0f599fde2f6dae94f8156b5bd4573a941f8f5856eeb4a39cb397747b2191d01c",
+    "scripts/complete_jose_databricks.py": "a64caf6b0c548354409cec6ea79eb6e45d4a13b08af27688243756a7c2fe8bbf",
+    ".github/workflows/spark.yml": "c738e8d6799eec364b86fb98bba1f74df4461ba85eaff1ed6ebc10ffe94fcd63"
+  },
+  "code_hash_scope": "Git committed file bytes",
+  "assembled_local_suite": {
+    "passed": 105,
+    "pytest_seconds": 391.05,
+    "process_exit_code": 0,
+    "python_version": "3.13.15",
+    "pyspark_version": "4.2.0",
+    "source_sha256": {
+      "src/processing/silver.py": "997a3a0695b3e6a066779af1731733805d43d0c7590e6ef3f4dcdc1c1a2299dd",
+      "src/processing/historical_features.py": "5aa962d27945c02b5b573736c8a5a6958e5aeff4ff734faa5b51ca2d84ab74ab",
+      "src/validation/validate_layers.py": "d0b9c5259deb85be7c21b1fa49a34eb705e655be0bbf0dfa682a42e9530d6c8b"
+    },
+    "validated_at": "2026-10-22T10:04:42.592816+00:00",
+    "scope": "Assembled local workspace containing all three Jose P2 modules and Diego baseline; individual stacked PRs contain subsets",
+    "synthetic_data": "Spark tests include synthetic Gold contracts; this is not a real Gold execution"
+  },
+  "local_qa_status": "105 passed on corrected sources; remote execution pending",
+  "complete_local_suite": {
+    "passed": 105,
+    "seconds": 392.25117780000437,
+    "scope": "Assembled workspace with all three tasks; individual PRs contain subsets"
+  },
+  "runtime_report": "reports/tables/databricks_layer_validation.json",
+  "pending": [
+    "gold_features",
+    "gold_monthly",
+    "gold_distribution"
+  ]
+}

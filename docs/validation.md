@@ -37,3 +37,19 @@ coincidencia con el CSV completo de enero (16,312 cancelados, 523,435 elegibles 
 95,432 retrasados). La suite conjunta de las tres tareas locales pasó 105 casos;
 su evidencia se incluye en la tarea de validación que contiene los tres módulos.
 Esto no demuestra disponibilidad operacional a tres horas.
+
+## Validación entre capas
+
+`src/validation/validate_layers.py` comprueba tipos, claves, nulos, rangos,
+etiquetas, cutoff, hash del registro original, cobertura por anti-joins y
+conciliación de volúmenes; compara históricos y salidas Gold cuando existan.
+Seis pruebas reales de Spark con datos sintéticos detectaron errores inyectados
+en etiquetas, cutoff, linaje, tasas, grupos, distribución y disponibilidad
+declarada. No son una ejecución Gold real. Las reglas están en
+[gold_validation_contract.md](gold_validation_contract.md).
+
+Si falta una tabla, queda en `pending` y `complete=false`. `require_gold=False`
+solo permite aprobar las capas presentes, conservando la integración pendiente;
+no certifica todo el flujo. La selección de estacionalidad con entrenamiento
+requiere además pruebas del módulo Gold. Implementación y documentación de
+José Miguel asistidas por Codex; revisión independiente pendiente.

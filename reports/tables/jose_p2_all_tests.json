@@ -1,0 +1,15 @@
+{
+  "passed": 105,
+  "pytest_seconds": 391.05,
+  "process_exit_code": 0,
+  "python_version": "3.13.15",
+  "pyspark_version": "4.2.0",
+  "source_sha256": {
+    "src/processing/silver.py": "997a3a0695b3e6a066779af1731733805d43d0c7590e6ef3f4dcdc1c1a2299dd",
+    "src/processing/historical_features.py": "5aa962d27945c02b5b573736c8a5a6958e5aeff4ff734faa5b51ca2d84ab74ab",
+    "src/validation/validate_layers.py": "d0b9c5259deb85be7c21b1fa49a34eb705e655be0bbf0dfa682a42e9530d6c8b"
+  },
+  "validated_at": "2026-10-22T10:04:42.592816+00:00",
+  "scope": "Assembled local workspace containing all three Jose P2 modules and Diego baseline; individual stacked PRs contain subsets",
+  "synthetic_data": "Spark tests include synthetic Gold contracts; this is not a real Gold execution"
+}
