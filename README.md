@@ -21,7 +21,7 @@ Los retrasos de salida varían entre aeropuertos, aerolíneas, meses y horarios.
 Construir un flujo reproducible de adquisición, limpieza, validación y análisis; evolucionarlo a PySpark y Delta en Databricks y evaluar un modelo preliminar sin fuga de información. La disponibilidad a tres horas debe verificarse antes del modelado.
 
 ## Fuentes de datos
-[BTS Reporting Carrier On-Time Performance](https://transtats.bts.gov/DL_SelectFields.aspx?gnoyr_VQ=FGJ), del U.S. Department of Transportation. ZIP mensuales con CSV. Periodo: enero 2024–diciembre 2025. La muestra incluida usa enero de 2025, 5,000 filas, 21 campos y semilla 42. Ver [procedencia y limitaciones](docs/data_sources.md).
+[BTS Reporting Carrier On-Time Performance](https://transtats.bts.gov/DL_SelectFields.aspx?gnoyr_VQ=FGJ), del U.S. Department of Transportation. ZIP mensuales con CSV. Pipeline: enero 2024–diciembre 2025 (24 meses completos). EDA inicial: 2024–2025. La muestra incluida usa enero de 2025, 5,000 filas, 21 campos y semilla 42. Ver [procedencia y limitaciones](docs/data_sources.md).
 
 ## Estado actual
 | Elemento | Evidencia y estado |
@@ -30,7 +30,7 @@ Construir un flujo reproducible de adquisición, limpieza, validación y anális
 | Muestra regenerada | 5,000 filas; 164 cancelados; 4,836 elegibles; 896 retrasos >=15 min (18.53%) |
 | Ejecución local | Adquisición verificable, limpieza, raw/interim/processed, validaciones, pruebas y benchmark sobre muestra |
 | EDA | Notebook portable ejecutado; antecedentes identificados por separado |
-| Databricks/PySpark/Delta | Arquitectura objetivo; workspace y ejecución pendientes |
+| Databricks/PySpark/Delta | Workspace Free Edition confirmado por captura; catálogo, permisos y ejecución pendientes |
 | Histórico de 24 meses | Salidas guardadas disponibles; Parquet original de 120,000 filas no entregado. Solo enero 2025 se regeneró aquí |
 | Variables y modelo a 3 h | Propuestos; no entrenados ni validados en esta base |
 | Colaboración | Tareas repartidas; los aportes y revisiones individuales deben realizarlos los integrantes |
@@ -72,7 +72,7 @@ python -m venv .venv
 .venv\Scripts\python -m pytest -q
 .venv\Scripts\python scripts/check_repository.py
 ```
-En Linux/macOS sustituir `.venv\Scripts\python` por `.venv/bin/python`. La muestra está incluida; este recorrido funciona sin descargar los 24 meses ni tener Databricks.
+En Linux/macOS sustituir `.venv\Scripts\python` por `.venv/bin/python`. La muestra está incluida; este recorrido funciona sin descargar los 24 meses completos ni tener Databricks.
 
 ### Obtención de datos crudos
 ```powershell
@@ -80,7 +80,7 @@ En Linux/macOS sustituir `.venv\Scripts\python` por `.venv/bin/python`. La muest
 ```
 Conserva el ZIP completo en `data/raw/bts/` y un manifiesto con URL, fecha y SHA256 en `data/raw/manifest.json`. Al reutilizarlo verifica hash y ZIP. Para regenerar la muestra añadir `--sample`.
 
-La regeneración lee el CSV mensual completo en memoria antes de muestrear. La ingesta acepta un mes explícito por ejecución. Extenderla a un rango completo con memoria controlada es una tarea del equipo.
+La regeneración lee el CSV mensual completo en memoria antes de muestrear. Para el histórico completo, `python -m src.ingestion.acquire_range` muestra el plan; añadir `--execute` descarga 2024–2025. El nuevo módulo extrae el CSV original por bloques, cuenta todas las filas y valida fechas; reanuda mediante manifiesto y excluye escritores concurrentes. No vuelve a muestrear el histórico. La muestra original sigue usando su procedimiento de pandas.
 
 ### Notebook
 Abrir `notebooks/01_exploration.ipynb` en VS Code o Jupyter con el entorno anterior. Para Jupyter instalar `jupyterlab` e `ipykernel` en ese entorno. Los antecedentes conservan rutas y dependencias originales de Colab; no se ejecutan en CI.
