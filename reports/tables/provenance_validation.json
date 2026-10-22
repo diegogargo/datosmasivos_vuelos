@@ -1,0 +1,109 @@
+{
+  "executed_at": "2026-10-22T00:56:57.490349+00:00",
+  "expected_period": "2025-01",
+  "checks": [
+    {
+      "name": "expected_period_valid",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "csv_exists",
+      "passed": true,
+      "detail": "flights_2025_01.csv"
+    },
+    {
+      "name": "parquet_exists",
+      "passed": true,
+      "detail": "flights_2025_01.parquet"
+    },
+    {
+      "name": "manifest_exists",
+      "passed": true,
+      "detail": "flights_2025_01.provenance.json"
+    },
+    {
+      "name": "manifest_period",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "csv_sha256",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "parquet_sha256",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source_url",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source_sha256_recorded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "csv_columns",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "csv_rows",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "csv_column_count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "csv_dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "parquet_columns",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "parquet_rows",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "parquet_column_count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "parquet_dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source_dimensions_coherent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "formats_same_values_order_and_nulls",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "scope": "Integridad de muestra y coherencia de metadatos; no vuelve a contar el ZIP original",
+  "numeric_tolerance": {
+    "rtol": 1e-12,
+    "atol": 1e-09
+  },
+  "observed_rows": 5000,
+  "observed_columns": 21,
+  "passed": true
+}

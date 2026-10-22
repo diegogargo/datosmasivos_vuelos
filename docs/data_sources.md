@@ -8,7 +8,7 @@ Formato de origen: ZIP con un CSV. El mes regenerado de enero 2025 tiene 539,747
 Frecuencia: publicación histórica mensual, susceptible a revisiones. La fecha del vuelo no es su fecha de disponibilidad pública. Uso: datos públicos para análisis académico; citar BTS, revisar avisos de uso de la fuente y no presentar el análisis como producto oficial del organismo. No se incluye una licencia de terceros ni se atribuye una licencia inventada a los datos.
 
 ## Periodo y volumen
-2024–2025, 24 meses. Los conteos originales conservados en la celda 17 del notebook suman **14,080,680 filas**: 7,079,061 en 2024 y 7,001,619 en 2025. Son conteos de una ejecución histórica guardada, no una descarga nueva auditada de todos los meses.
+Alcance aprobado para el pipeline: **2024–2025, 24 meses completos, sin muestreo**. El EDA original conserva 2024–2025, 24 meses. Los conteos originales conservados en la celda 17 del notebook suman **14,080,680 filas**: 7,079,061 en 2024 y 7,001,619 en 2025. Son conteos de una ejecución histórica guardada de dos años, no sustituyen una nueva adquisición auditada del mismo periodo.
 
 El notebook guarda una muestra de 5,000 filas por mes, 120,000 en total. Su Parquet histórico no fue entregado. Esta base conserva esas salidas y solo volvió a descargar enero 2025 para producir una muestra evaluable. Las 120,000 filas no equivalen a los 14.08 millones de vuelos originales.
 
@@ -24,7 +24,12 @@ El ZIP se conserva sin modificar en `data/raw/bts/`. El manifiesto registra URL,
 ## Muestra incluida
 `data/sample/flights_2025_01.csv`, su equivalente Parquet y su procedencia. Es una regeneración del procedimiento original, no el archivo histórico recuperado. Con pandas 3.0.6 los conteos principales coinciden con las salidas guardadas. El muestreo lee todo el mes en memoria; debe mejorarse antes de escalar.
 
-## Problemas conocidos
+## Verificación de procedencia de la muestra
+`python -m src.ingestion.validate_provenance` escribe `reports/tables/provenance_validation.json` y devuelve código 1 ante cualquier fallo. Comprueba SHA256 de CSV y Parquet, 21 campos en el orden esperado, filas y columnas declaradas, todas las fechas del periodo solicitado, URL oficial y equivalencia ordenada de valores y nulos. Las diferencias numéricas de serialización aceptadas se limitan a rtol=1e-12 y atol=1e-9.
+
+Quince pruebas con archivos temporales incluyen hashes falsos, conteos alterados, cambio de contenido con hash actualizado, orden distinto, fechas ajenas al mes y ausencia de archivos. No modifican los originales. La coherencia de dimensiones originales y un hash registrado no sustituyen una comprobación independiente del ZIP original; este alcance está declarado en el reporte.
+
+## Problemas conocidos de los datos
 Nulos por cancelación/desvío, causas posteriores con nulos estructurales, horas locales HHMM, extremos de retraso, cambios de códigos, posible duplicación de claves y sesgo de muestreo mensual uniforme. [Diccionario](data_dictionary.md) y [auditoría del original](notebook_audit.md).
 
 ## Clima y otras fuentes

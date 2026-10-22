@@ -19,7 +19,11 @@ Un segmento de vuelo programado reportado por una aerolínea a BTS en una fecha,
 La etiqueta es `DepDelay >=15` cuando `Cancelled ==0` y `DepDelay` está observado. Se conservan retrasos negativos. Cancelados permanecen en la capa limpia con etiqueta nula, incluso si reportan `DepDelay`.
 
 ## Alcance temporal
-Enero 2024–diciembre 2025, vuelos incluidos en Reporting Carrier de BTS. El original usó 5,000 filas por mes. Esta base regenera enero de 2025 y preserva salidas históricas sin afirmar una ejecución nueva de los 24 meses.
+Pipeline: enero 2024–diciembre 2025, 24 meses completos de Reporting Carrier de BTS. El equipo eligió dos años. El EDA inicial mantiene su periodo 2024–2025 y 5,000 filas por mes; no representa automáticamente el histórico ampliado. La muestra reproducible incluida tiene 5,000 filas de enero 2025. Los resultados históricos de 120,000 filas siguen identificados como antecedentes.
+
+La cantidad real descargada de los 24 meses se documentará mediante manifiestos y conteos nuevos. Los 14,080,680 registros guardados en el notebook corresponden únicamente a 2024–2025. Son antecedentes que deben cotejarse con una nueva adquisición auditada del mismo periodo.
+
+`python -m src.ingestion.validate_provenance` comprueba hashes, filas, columnas, periodo y equivalencia ordenada CSV/Parquet de la muestra, con nulos iguales y tolerancias numéricas rtol=1e-12 y atol=1e-9. El reporte distingue integridad de muestra de una nueva auditoría del ZIP original.
 
 ## Alcance de los parciales
 P1: definición, fuente, muestra, diccionario, EDA, arquitectura y colaboración. P2: adquisición, raw/interim/processed, transformaciones, validación, pruebas, desempeño y decisiones. La variante local permite revisar componentes sobre la muestra; Databricks y colaboración auténtica quedan como tareas explícitas.
@@ -32,9 +36,9 @@ Objetivo de plataforma: Databricks, PySpark y Delta con Bronze/Silver/Gold. Vari
 - BTS es histórico y mensual; los resultados no equivalen a información disponible en vivo a tres horas.
 - HHMM usa hora local; comparar aeropuertos requiere zonas horarias verificables.
 - Muestreo fijo por mes cambia la ponderación de la población. Tasas de grupos pequeños son inestables.
-- Dos años no demuestran estacionalidad permanente.
+- El EDA inicial de dos años no demuestra estacionalidad permanente ni describe por sí solo los dos años completos.
 - No se verificó un archivo histórico de pronósticos meteorológicos emitidos al corte de tres horas.
-- La ejecución local no prueba escalabilidad distribuida. Falta workspace.
+- La ejecución local no prueba escalabilidad distribuida. Workspace Free Edition confirmado por captura; catálogo, permisos y ejecución pendientes de verificar.
 
 ## Fuera del alcance vigente
 Precios, impacto económico, sistema en producción, informe y presentación final. GARCH, Monte Carlo y redes/SIR son extensiones sujetas a justificación.
