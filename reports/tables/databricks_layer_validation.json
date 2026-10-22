@@ -1,0 +1,650 @@
+{
+  "passed": true,
+  "complete": false,
+  "bronze_silver_passed": true,
+  "checks": [
+    {
+      "check": "silver_schema",
+      "passed": true,
+      "violations": 0,
+      "mismatches": {}
+    },
+    {
+      "check": "source_period_range",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "source_date_matches_period",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "cancelled_binary",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "diverted_binary",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "operated_finite_outcome",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "eligibility_matches_outcome",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "label_matches_outcome",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "cancelled_label_null",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "distance_positive_finite",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "cutoff_exactly_three_hours",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "scheduled_hour_range",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "scheduled_hhmm_departure",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "scheduled_hhmm_arrival",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "sha256_flight_id",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "sha256__source_csv_sha256",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "sha256__source_zip_sha256",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "sha256__record_sha256",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "positive_OriginAirportID",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "positive_DestAirportID",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "positive_DOT_ID_Reporting_Airline",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "positive_Flight_Number_Reporting_Airline",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "airport_code_Origin",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "airport_code_Dest",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "required_key_FlightDate",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "required_key_Reporting_Airline",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "required_key_Flight_Number_Reporting_Airline",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "required_key_Origin",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "required_key_Dest",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "required_key_CRSDepTime",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "finite_when_observed_DepDelay",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "finite_when_observed_ArrDelay",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "finite_when_observed_CRSElapsedTime",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "finite_when_observed_DepTime",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "finite_when_observed_ArrTime",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "finite_when_observed_CarrierDelay",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "finite_when_observed_WeatherDelay",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "finite_when_observed_NASDelay",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "finite_when_observed_SecurityDelay",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "finite_when_observed_LateAircraftDelay",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "unique_flight_id",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "unique_natural_key",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "quarantine_has_reason",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "quarantine_payload_hash",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "output_record_unique",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "bronze_records_missing_from_outputs",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "outputs_without_bronze_record",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2024-01",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2024-02",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2024-03",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2024-04",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2024-05",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2024-06",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2024-07",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2024-08",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2024-09",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2024-10",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2024-11",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2024-12",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2025-01",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2025-02",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2025-03",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2025-04",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2025-05",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2025-06",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2025-07",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2025-08",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2025-09",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2025-10",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2025-11",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "volume_2025-12",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "history_unique_flight_id",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "history_rows_match",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "history_declared_mode",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "history_no_operational_claim",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "history_minimum_contract",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "history_window_lower",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "history_window_upper",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "history_disabled_null_origin_hour_delay_rate_28d",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "history_count_origin_hour_history_count_28d",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "history_insufficient_null_origin_hour_delay_rate_28d",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "history_rate_origin_hour_delay_rate_28d",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "history_disabled_null_airline_delay_rate_28d",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "history_count_airline_history_count_28d",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "history_insufficient_null_airline_delay_rate_28d",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "check": "history_rate_airline_delay_rate_28d",
+      "passed": true,
+      "violations": 0
+    }
+  ],
+  "months": [
+    {
+      "period": "2024-01",
+      "source_rows": 547271,
+      "unique_source_rows": 547271,
+      "silver_rows": 547271,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2024-02",
+      "source_rows": 519221,
+      "unique_source_rows": 519221,
+      "silver_rows": 519221,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2024-03",
+      "source_rows": 591767,
+      "unique_source_rows": 591767,
+      "silver_rows": 591767,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2024-04",
+      "source_rows": 582185,
+      "unique_source_rows": 582185,
+      "silver_rows": 582185,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2024-05",
+      "source_rows": 609743,
+      "unique_source_rows": 609743,
+      "silver_rows": 609743,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2024-06",
+      "source_rows": 611132,
+      "unique_source_rows": 611132,
+      "silver_rows": 611132,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2024-07",
+      "source_rows": 634613,
+      "unique_source_rows": 634613,
+      "silver_rows": 634613,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2024-08",
+      "source_rows": 619025,
+      "unique_source_rows": 619025,
+      "silver_rows": 619024,
+      "quarantine_rows": 1,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2024-09",
+      "source_rows": 582622,
+      "unique_source_rows": 582622,
+      "silver_rows": 582622,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2024-10",
+      "source_rows": 615497,
+      "unique_source_rows": 615497,
+      "silver_rows": 615497,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2024-11",
+      "source_rows": 575404,
+      "unique_source_rows": 575404,
+      "silver_rows": 575398,
+      "quarantine_rows": 6,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2024-12",
+      "source_rows": 590581,
+      "unique_source_rows": 590581,
+      "silver_rows": 590581,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2025-01",
+      "source_rows": 539747,
+      "unique_source_rows": 539747,
+      "silver_rows": 539747,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2025-02",
+      "source_rows": 504884,
+      "unique_source_rows": 504884,
+      "silver_rows": 504884,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2025-03",
+      "source_rows": 600872,
+      "unique_source_rows": 600872,
+      "silver_rows": 600872,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2025-04",
+      "source_rows": 583950,
+      "unique_source_rows": 583950,
+      "silver_rows": 583950,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2025-05",
+      "source_rows": 605648,
+      "unique_source_rows": 605648,
+      "silver_rows": 605648,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2025-06",
+      "source_rows": 611575,
+      "unique_source_rows": 611575,
+      "silver_rows": 611575,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2025-07",
+      "source_rows": 631428,
+      "unique_source_rows": 631428,
+      "silver_rows": 631428,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2025-08",
+      "source_rows": 602378,
+      "unique_source_rows": 602378,
+      "silver_rows": 602378,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2025-09",
+      "source_rows": 562439,
+      "unique_source_rows": 562439,
+      "silver_rows": 562439,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2025-10",
+      "source_rows": 605844,
+      "unique_source_rows": 605844,
+      "silver_rows": 605844,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2025-11",
+      "source_rows": 570550,
+      "unique_source_rows": 570550,
+      "silver_rows": 570546,
+      "quarantine_rows": 4,
+      "exact_duplicate_exclusions": 0
+    },
+    {
+      "period": "2025-12",
+      "source_rows": 582304,
+      "unique_source_rows": 582304,
+      "silver_rows": 582304,
+      "quarantine_rows": 0,
+      "exact_duplicate_exclusions": 0
+    }
+  ],
+  "pending": [
+    "gold_features",
+    "gold_monthly",
+    "gold_distribution"
+  ],
+  "scope": "available_layers",
+  "temporal_limit": "Checks validate declared bounds and null policies; algorithm leakage is tested separately. No real-time publication availability certified.",
+  "layer": "cross_layer_validation",
+  "start": "2024-01",
+  "end": "2025-12",
+  "validated_at": "2026-10-22T10:19:20.340523+00:00",
+  "spark_version": "4.2.0",
+  "delta_versions": {
+    "workspace.bronze.vuelos_raw": 25,
+    "workspace.silver.vuelos_clean": 49,
+    "workspace.silver.vuelos_quarantine": 49,
+    "workspace.silver.vuelos_history": 1
+  }
+}
