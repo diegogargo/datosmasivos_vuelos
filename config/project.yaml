@@ -16,7 +16,7 @@ platform:
   target: Databricks
   engine: PySpark
   format: Delta
-  workspace_status: confirmed_by_user_screenshot_execution_pending
+  workspace_status: bronze_24_months_verified_silver_gold_pending
   layers: [bronze, silver, gold]
 features_proposed:
   - is_peak_delay_season

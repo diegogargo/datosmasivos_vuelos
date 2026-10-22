@@ -21,12 +21,12 @@ La etiqueta es `DepDelay >=15` cuando `Cancelled ==0` y `DepDelay` está observa
 ## Alcance temporal
 Pipeline: enero 2024–diciembre 2025, 24 meses completos de Reporting Carrier de BTS. El equipo eligió dos años. El EDA inicial mantiene su periodo 2024–2025 y 5,000 filas por mes; no representa automáticamente el histórico ampliado. La muestra reproducible incluida tiene 5,000 filas de enero 2025. Los resultados históricos de 120,000 filas siguen identificados como antecedentes.
 
-La cantidad real descargada de los 24 meses se documentará mediante manifiestos y conteos nuevos. Los 14,080,680 registros guardados en el notebook corresponden únicamente a 2024–2025. Son cifras históricas guardadas; deben cotejarse con la nueva adquisición auditada del mismo periodo.
+La adquisición nueva ya verificó los 24 meses completos: 14,080,680 filas, 7,079,061 de 2024 y 7,001,619 de 2025. Los hashes, tamaños y conteos están en `reports/tables/acquisition_full.json` y `acquisition_validation.json`. Coinciden con el total histórico guardado en el notebook, pero ahora cuentan con una comprobación nueva de los originales. Bronze Delta también concilia ese volumen completo por mes.
 
 `python -m src.ingestion.validate_provenance` comprueba hashes, filas, columnas, periodo y equivalencia ordenada CSV/Parquet de la muestra, con nulos iguales y tolerancias numéricas rtol=1e-12 y atol=1e-9. El reporte distingue integridad de muestra de una nueva auditoría del ZIP original.
 
 ## Alcance de los parciales
-P1: definición, fuente, muestra, diccionario, EDA, arquitectura y colaboración. P2: adquisición, raw/interim/processed, transformaciones, validación, pruebas, desempeño y decisiones. La variante local permite revisar componentes sobre la muestra; Databricks y colaboración auténtica quedan como tareas explícitas.
+P1: definición, fuente, muestra, diccionario, EDA, arquitectura y colaboración. P2: adquisición, raw/interim/processed, transformaciones, validación, pruebas, desempeño y decisiones. La variante local permite revisar componentes sobre la muestra. En Databricks ya se ejecutó Bronze completo; faltan Silver, Gold e integración, además de las revisiones cruzadas del equipo.
 
 El modelo preliminar se menciona en el contexto del equipo como solicitud adicional del profesor. Confirmar su forma exacta; no se presenta como requisito textual de modelado de P1/P2 en el PDF.
 
@@ -38,7 +38,7 @@ Objetivo de plataforma: Databricks, PySpark y Delta con Bronze/Silver/Gold. Vari
 - Muestreo fijo por mes cambia la ponderación de la población. Tasas de grupos pequeños son inestables.
 - El EDA inicial de dos años no demuestra estacionalidad permanente ni describe por sí solo los dos años completos.
 - No se verificó un archivo histórico de pronósticos meteorológicos emitidos al corte de tres horas.
-- La ejecución local no prueba escalabilidad distribuida. Workspace Free Edition confirmado por captura; catálogo, permisos y ejecución pendientes de verificar.
+- La ejecución local no prueba escalabilidad distribuida. Bronze completo está ejecutado en Databricks Free Edition, Spark 4.2.0, catálogo `workspace`; se comprobaron permisos de ejecución y escritura de Diego. Los permisos Databricks de los otros integrantes no se han comprobado. El benchmark CSV/Parquet local no mide rendimiento Spark.
 
 ## Fuera del alcance vigente
 Precios, impacto económico, sistema en producción, informe y presentación final. GARCH, Monte Carlo y redes/SIR son extensiones sujetas a justificación.

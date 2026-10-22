@@ -1,11 +1,11 @@
 {
-  "executed_at": "2026-10-22T02:28:25.314857+00:00",
+  "executed_at": "2026-10-22T02:58:03.144092+00:00",
   "period": {
     "start": "2024-01",
     "end": "2025-12"
   },
   "local_components_passed": true,
-  "raw_hashes_requested": false,
+  "raw_hashes_requested": true,
   "checks": [
     {
       "command": "-m src.ingestion.validate_provenance",
@@ -25,6 +25,10 @@
     },
     {
       "command": "scripts/check_repository.py",
+      "passed": true
+    },
+    {
+      "command": "-m src.validation.validate_acquisition --verify-files",
       "passed": true
     }
   ],
